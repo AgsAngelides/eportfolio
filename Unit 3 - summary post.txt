@@ -1,0 +1,29 @@
+<h5><u>Summary post</u>
+<p>Activity trackers as well as health and fitness applications are in high demand and widely used, with most of people having first-hand experience using them, my module 
+peers not being an exception.</p>
+
+<p>Andrijana (2021) has brought an interesting point to attention, i.e. the activity tracker and application data usage in solving criminal cases. There are many more examples 
+of such data being used to prove both someone’s guilt and innocence (Axios, 2019). This calls attention to the data privacy issue as well as the ethics question on whether the 
+data should be easily available to law enforcement. A study results published in 2020 found that the majority of participants from the USA and Germany have never familiarised 
+themselves with the data policies of the activity trackers they were using (Ilhan et al. 2021). Hence, the less computer literate users could not be aware of the extent to which 
+their data is being collected and thus unaware of the impact it could have on their lives if it was accessed by either hackers or other institutions with permission to do so.</p>
+
+<p>Another issue highlighted by the examples provided by Andrijana (2021) and Kevin (2021) is the sensitivity of health and fitness data. The health data of a person is considered 
+sensitive and it is kept confidential by the health institutions, however the same is not always applied to the health data stored by the health and fitness trackers and 
+applications. Deogun et al. (2019) discusses how certain data on its own may not be considered sensitive. For example, the person’s name stored by the health application is 
+not a security issue, however, that combined with a location and timestamp provides details of one’s whereabouts and should be considered confidential.</p>
+
+<p>In my opinion, the fitness and health applications and trackers provide many benefits, however, the existing data privacy regulations need updating to provide better security 
+of health and location data being collected.</p>
+
+<p><b>References</b></p>
+
+<p>Axios. (2019) Data collection from fitness tech has crime-solving capabilities. Available from: https://www.axios.com/fitbits-wearables-crime-solving-2a86143a-5948-40f1-a5a0-cb85c490ad39.html [Accessed 27 November 2021].
+<br>
+Deogun, D., Sawano, D., Johnsson, D. B. (2019) Secure by Design. Manning Publications.
+<br>
+Ilhan, A. and Fietkiewicz, K.J. (2021), "Data privacy-related behavior and concerns of activity tracking technology users from Germany and the USA", Aslib Journal of Information Management, Vol. 73 No. 2.
+<br>
+Klacar A. (2021) Initial post: Peer response. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=284859 [Acessed 28 November 2021].
+<br>
+Peuhkurinen K. (2021) Initial post: Peer response. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=284859 [Acessed 28 November 2021].</p>
