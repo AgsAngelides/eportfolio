@@ -1,0 +1,138 @@
+<h4>Secure implementation of appointment and scheduling management information system (ASMIS) at a community medical centre</h4>
+
+<p>Online appointment booking applications are being implemented by businesses due to the many benefits it has to offer, such as reducing admin hours required for appointment 
+scheduling and allowing clients to book appointments at a convenient time to them (Commusoft, 2021). One of such businesses, a medical centre, and its appointment and scheduling 
+management information system (ASMIS) will be discussed here.</p>
+
+<p>The appointments at this facility have been scheduled via a telephone call to the receptionist thus far. Due to the increasing volume of the phone calls resulting from the 
+community expansion, the management team of the Queens medical centre is looking at obtaining a web-based ASMIS system. The aim is for patients to be able to book appointments 
+with the help of ASMIS by providing the essential information about themselves, picking the visit purpose, and then selecting from the available list of doctors and 
+appointment times. One of the project’s acceptance criteria is a secure ASMIS system.</p>
+
+<p>There are many different subscription-based products hosted by the supplier available on the market and when choosing the most suitable and secure product, the three principles 
+from the CIA triad must be considered: confidentiality, integrity, and availability (Walkowski, 2019). Due to the sensitive nature of the patients’ data, the data must be accessible 
+by the authorised personnel only (confidentiality element). The data must remain correct and reliable throughout its lifetime; unreliable patients’ data could result in wrong 
+appointments with the wrong specialist (the integrity principle). The ASMIS application must also remain accessible all hours of the day, every day to allow urgent booking 
+requests (the availability principle).</p>
+
+<p>When choosing between different applications, the buyer is choosing between the features it has to offer. To ensure the ASMIS system chosen has all the security features required 
+by the clinic’s management, the appointment booking process, as well as the potential cyber security threats must be understood first.</p>
+
+<p>To visualise and analyse the relationship between the system and the participants, the Universal Modelling Language (UML) Sequence diagram will be used. UML is a well-known 
+software and system modelling method which has been recognised by ISO as a standard in 1970 and since then has become widely accepted in software development. One of the many 
+benefits it offers is the ability to provide the information about a system in an easy-to-understand visual way (Fergusson, 2018).</p>
+
+<p>Figure 1 represents the Sequence diagram showcasing the expected relationship between the ASMIS portal and patient as well as the user, doctor and appointment databases referred 
+to as lifelines in the UML modelling (Seidl, 2015). The patient must be able to login to ASMIS if they are registered and have a correct password. If the patient’s name is found, 
+but the password is incorrect, the login is not permitted. If the patient’s name is not found, the user is asked to register. Upon completing the registration, the patient is asked 
+to select a visit purpose to proceed with the appointment booking. Selecting an option will trigger the doctors’ availability data request. If there are doctors available, the 
+patient can select a specialist and the required appointment time followed by saving the appointment in the appointments database. If there are no specialists available, 
+the patient will be asked to try again later.</p>
+
+<p>The Figure 1 only depicts the relationship between the patient and the ASMIS and it excludes the staff: doctors and admin. The staff will, however, also require access to the 
+application. The admin team must be able to view every user record, maintain the list of visit purposes, edit appointments and availability and to also create new users 
+(admin, patient, or doctor). Doctors, however, must only be able to view and edit data related to them: their own record, availability, upcoming appointments, and patients’ 
+details for these appointments. Doctors cannot create or removed any user accounts, including their own.</p>
+
+<br>
+<img class="img-responsive" alt="" src="./launching into cyber/unit 9/Essay figure 1.PNG">
+<br>
+
+<p>After the appointment booking process and the requirements for the ASMIS are analysed, the cyber threat analysis can be carried out. In this instance, the STRIDE threat modelling 
+technique will be used.</p>
+
+<p>The STRIDE approach identifies the types of attacks that the applications or software can experience and assigns it to different threat categories hidden behind the letters of its 
+name: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege (Shostack, 2014).</p>
+
+<p>Threats applicable to ASMIS identified using STRIDE method are presented in the Table 1 where most likely threats are provided for every threat type.</p>
+
+<br>
+<img class="img-responsive" alt="" src="./launching into cyber/unit 9/Essay Table 1.PNG">
+<br>
+
+<p>The UML Abuse case diagram is beneficial when trying to visualise the threats from the Table 1 in terms of participants involved. An abuse case diagram uses abstractions 
+called actors to represent entities outside the application who interact with the system in some way (Seidl et al, 2015). The actors are associated to the use case scenarios 
+which are abstractions of the interactions between the system (ASMIS) and actors. So far, four applicable actors have been identified: patients, doctors, admins, and 
+criminals. The associations between the actors and the threats identified are visualised in the Abuse case diagram in the Figure 2. The UML inheritance relationship has been 
+used to represent the common properties between the doctors and amin with a new super-actor called ‘staff’.</p>
+
+<p>Having analysed the appointment booking process and having determined the cyber threats, the new system security requirements can be addressed. Due to this essay 
+length restrictions, only some of the threats will be looked at in more detail.</p>
+ 
+<br>
+<img class="img-responsive" alt="" src="./launching into cyber/unit 9/essay figure 2.PNG">
+<br>
+
+<p>To access ASMIS, the patients must register. It has been shown that systems using phone numbers to verify its new users have fewer fake accounts; it is harder to obtain a phone 
+number than an email address (twilio, 2022). The phone number validation can also be applied when re-activating stale user accounts.</p>
+
+<p>An ASMIS system with a two-factor authentication (2FA) will also reduce the risk of an existing account being hacked due to weak passwords. The method uses two authentication 
+factors: something the user knows (the login name and password) and something the user has: smartphone (Rosencrance, 2022). Whilst the 2FA makes hacking more difficult, not all 
+authentication methods are equally secure. It has been found that more secure systems use authenticator app instead of SMS, as SMS messages can be intercepted due to the 
+vulnerability in the Signalling System 7 (SS7) protocol (Perekalin, 2017).</p>
+
+<p>Since patients must provide details such as their name, email address, home address, phone number and password to register on ASMIS, an application built upon the General 
+Data Protection Regulation (GDPR) data minimisation principle should be selected (ico, 2022) to minimise the impact of the data breach. Such a system would allow the client 
+to configure their own form fields, so that any redundant fields are not collecting more information than required for the appointment booking purpose. Asking for information 
+such as the National Health Service (NHS) insurance number should be avoided. Leaked NHS insurance number could be used to apply for mortgages, bank loans, etc. (BBC, 2017). 
+Furthermore, a system which encrypts its data at rest (in the database), should also be considered. However, since the rest data is normally positioned behind the supplier’s 
+firewall and it is protected by an anti-virus software already, this security feature can be considered as a nice-to-have rather than a must (brightlineIT, 2022).</p>
+
+<p>Types of logging provided by ASMIS must also be looked at to address the repudiation threats identified by the STRIDE method. Event logging (e.g. who deleted data and when) is a 
+must to have control over the actions carried out by privileged users. Other types of logs such as audit trail, availability, threats would also provide value and an extra insight 
+into the security of the system (Lewis, 2019).</p>
+
+<p>The DNS spoofing, session hijacking, HTML field tampering, and packet sniffing threats are also likely on a web-based system. The packet sniffer installed on a user’s computer 
+via a phishing email will log and analyse the data passing through the network which could include passwords, login details, websites visited, etc. (O’Donnell, 2021). The user’s 
+information gathered by the packet sniffer upon the login to ASMIS can be used to carry out a DNS spoofing Man in The Middle Attack which would redirect the user to a genuine 
+looking fake site used for data collection by cyber criminals (Veracode, 2022). Packet sniffers and phishing emails can also capture valid session cookies used by web-based 
+systems such as ASMIS to remember the user is logged in. The capture cookie can be used to hijack a valid user’s session and to make the server think they are a legitimate 
+user (Banach, 2019).</p>
+
+<p>To counter these threats, it must be ensured that ASMIS encrypts all data passing between the client (browser) and the web-server by using the SSL/TLS certificates across the 
+whole application and not the login page only. These certificates scramble the data being passed and prevents the hacker from reading it (digicert, 2022). Whilst the TLS 
+certificate can introduce a delay to the system’s traffic, it is unlikely to have a big impact to ASMIS performance due to the smaller user base.</p>
+
+<p>A web-system which uses the DNS Security Protocol (DNSSEC) will prevent DNS spoofing attacks. The DNSSEC uses public/private key pairs to ensure that the IP address the user is 
+trying to access is the same as the address stored in the authoritative DNS (verisign, 2022). Figures published by Neustar International Security Council (NISC) (Coker, 2021) 
+relaving that 72% of organisations have suffered from the DNS related attacks in the last 12 months are of concern, and so a system with correctly implemented DNSSEC should be 
+selected. The implementation of DNSSEC is very complex, so the likelihood of the DNS spoofing attack and the impact it could have should be considered before crossing ASMIS 
+systems of the list which do not use it (keydcn, 2018).</p>
+
+<p>ASMIS availability could be impacted if the denial of service (DoS) attack is carried out by flooding the login page with HTTP requests. Whilst the mitigation of such risk is 
+complicated, the implementation of a JavaScript computational challenge has been shown to reduce the number of bot attacks (Project Shield, 2019). A recent data breach of a 
+web-based booking application FlexBooker leaking 3.7 million customer records demonstrates that DoS attacks must be addressed (Ikeda, 2022).</p>
+
+<p>Many security threats identified here can be tackled by researching the ASMIS systems available and each system’s security features. Choosing one which has addressed DoS 
+attacks would ensure the earlier discussed availability principle of the CIA triad is achieved. Data encryption, 2FA login method, authentication of new accounts using a phone 
+number, application of the GDPR principle when designing a system would make sure that the CIA triad confidentiality and integrity element requirements are met. However, no 
+system is completely secure if the users do not have the cyber security awareness (CybSafe, 2021). Human error was responsible for 88% of cyber security incidents reported 
+to the ICO from 2017 to 2018 (it governance, 2022). Misconfigured user profile threat identified earlier or staff opening a phishing email on their work machines could result 
+in a data breach. Thus, for a new system to be securely implemented, both the technological defences and the user training must be addressed.</p>
+
+<br><br>
+
+<h4>References</h4>
+
+<p>Commusoft. (2021) 7 Benefits of Using an Online Appointment System. Available from: https://www.commusoft.co.uk/online-appointment-system-benefits/ [Accessed 15 January 2022].</p>
+<p>Walkowski, D. (2019) What Is the CIA Triad? Available from: https://www.f5.com/labs/articles/education/what-is-the-cia-triad [Accessed 16 January 2022].</p>
+<p>Shostack, A. (2014) Threat Modelling: Designing for Security. Indianapolis: Wiley & Sons. Available from: https://moodle.ufsc.br/pluginfile.php/2377555/mod_resource/content/2/Threat%20Modeling.pdf [Accessed 19 January 2022].</p>
+<p>Seidl, M., Scholz, M., Huemer, C., Kappel, G. (2015) UML @ Classroom: An Introduction to Object-Oriented Modeling. 1st ed. Switzerland: Springer, Cham.</p>
+<p>Ico. (2022) Principle (c): Data minimisation. Available from: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/principles/data-minimisation/ [Accessed 20 January 2022].</p>
+<p>BBC. (2017) Thousands of Welsh NHS staff’s data is stolen in hack. Available from: https://www.bbc.co.uk/news/uk-wales-39249975 [Accessed 20 January 2022].</p>
+<p>Lewis, J. (2019) The 5 Most Important Logs an Application Should Write. Available from: https://towardsdatascience.com/the-5-most-important-logs-an-application-should-write-53aea35c740f [Accessed 20 January 2022].</p>
+<p>BrightlineIt (2022) What Is Encryption at Rest, and Why Is It Important for Your Business? Available from: https://brightlineit.com/encryption-at-rest-important-business/ [Accessed 20 January 2022].</p>
+<p>Rosencrance, L. (2022) two-factor authentication (2FA). Available from: https://www.techtarget.com/searchsecurity/definition/two-factor-authentication [Accessed 20 January 2022].</p>
+<p>Perekalin, A. (2017) Why two-factor authentication is not enough. Available from: https://www.kaspersky.com/blog/ss7-attack-intercepts-sms/16877/ [Accessed 20 January 2022].</p>
+<p>Fergusson, K. (2018) UML diagrams – which diagram to use and why. Available from: https://drawio-app.com/uml-diagrams/ [Accessed 20 January 2022].
+<p>Twilio. (2022) Phone Verification: Because Email Verification is No Longer enough. Available from: https://www.twilio.com/learn/account-security/phone-verification-because-email-verification-is-no-longer-enough [Accessed on 21 January 2022].</p>
+<p>O’Donnell, A. (2021) What Are Packet Sniffers and How Do They Work? Available from: https://www.lifewire.com/what-is-a-packet-sniffer-2487312 [Accessed 21 January 2022].</p>
+<p>Veracode. (2022) Man in the Middle (MITM) Attack. Available from: https://www.veracode.com/security/man-middle-attack [Accessed 21 January 2022].</p>
+<p>Banach, Z. (2019) What Is Session Hijacking: Your Quick Guide to Session Hijacking Attacks. Available from: https://www.netsparker.com/blog/web-security/session-hijacking/ [Assessed 21 January 2021].</p>
+<p>Digicert. (2022) What is SSL, TLS and HTTPS? Available from: https://www.websecurity.digicert.com/en/uk/security-topics/what-is-ssl-tls-https [Accessed 21 January 2022].</p>
+<p>Verisign. (2022) How DNSSEC Works to Provide the Protocol for a Secure Internet. Available from: https://www.verisign.com/en_US/domain-names/dnssec/how-dnssec-works/index.xhtml [Accessed 21 January 2022].</p>
+<p>Ikeda, S. (2022) 3.7 Million FlexBooker Accounts Leaked to Hacker Forum After DDoS Attack. Available from: https://www.cpomagazine.com/cyber-security/3-7-million-flexbooker-accounts-leaked-to-hacker-forum-after-ddos-attack/ [Accessed 21 January 2022].</p>
+<p>Project Shield. (2019) Using JavaScript Challenge. Available from: https://support.projectshield.withgoogle.com/s/article/Using-JavaScript-Challenge?language=en_US [Accessed 21 January 2022].</p>
+<p>Keycdn. (2018) Quick Guide to DNSSEC. Available from: https://www.keycdn.com/support/dnssec [Accessed 22 January 2022].</p>
+<p>It governance. (2022) Data Breaches. Available from: https://www.itgovernance.co.uk/data-breaches [Accessed 22 January 2022].</p>
+<p>CybSafe. (2021) 7 reasons why security awareness training is important. Available from: https://www.cybsafe.com/community/blog/7-reasons-why-security-awareness-training-is-important/ [Accessed 22 January 2022].</p>
