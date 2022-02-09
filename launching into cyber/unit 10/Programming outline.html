@@ -1,0 +1,162 @@
+<h4>The outline of the programming work</h4>
+<p>The aim of the program is to allow a patient to register or login to the ASMIS web application. The patient registration/login page and the database (in this instance a csv file) 
+will be separated from the staff (doctors and admin) internal login page and databases for additional security. This code only handles the patient login and registration.</p>
+<p><b>The libraries to be used:</b>
+	<ul>
+		<li>hashlib – to be used for use password encryption</li>
+		<li>csv – used for storing user data</li>
+		<li>datetime – allows to get the current date for assigning to the patient record</li>
+		<li>binascii – used for encryption to convert from binary to encoded binary.</li>
+		<li>os – allows to use operating system for renaming the csv files, removing csv files, checking the file size, getting a random number for encryption.</li>
+	</ul>
+</p>
+<h4>The program outline:</h4>
+<p>Import libraries hashlib, os, csv, datetime, binascii.</p>
+<p>Define a function for creating the initial csv patient file:
+	<ul>
+		<li>Open the patient csv file.</li>
+		<li>If the file size is zero, the column titles are added to the file.</li>
+	</ul>
+</p>
+<p>Create Patient class with the __init__ constructor and the patient email address variable within it. Assign the class with the following functions:
+	<ol>
+		<li>Function for registering the user:
+			<ul>
+				<li>Open the csv file in append mode.</li>
+				<li>Ask the user to enter their email in the terminal.</li>
+				<li>If the user’s email address doesn’t already exist in the patient’s file:
+					<ul>
+						<li>Ask to the enter their password in the terminal.</li>
+						<li>Apply recuring helper function to check if the password meets the password security criteria. If not, ask the user to re-enter the password in the 
+						terminal.</li>
+						<li>Ask the user to confirm the password in the terminal.</li>
+						<li>If the two passwords match, the password is encrypted using sha256 cryptographic method.</li>
+						<li>The user is stored in the csv file against the email, encrypted password, account created date and account locked value of 0.</li>
+					</ul>
+				</li>
+				<li>If the email address already exists in the csv file, advise the user that such account already exists and call the login function.</li>
+			</ul>
+		</li>
+		<li>Function for login:
+			<ul>
+				<li>Set login attempts to 3.</li>
+				<li>Check if the user exists in the Patient csv file:
+					<ul>
+						<li>If the user exists in the csv file and the account is locked, advise the user it is locked and exit.</li>
+						<li>If the user with the entered email address exists and the account is not locked, ask to enter the password.
+						<br>Verify each password by encrypting the entered password with the help of Password Verification function and comparing it against the one in the csv file.
+							<ul>
+								<li>If the password is incorrect, advise the user how many attempts they have remaining.</li>
+								<li>When the 3 attempts are exceeded, lock the user account by using the lock user account function.</li>
+						</li>
+						<li>If the user’s email entered doesn’t exist in the csv file, we ask to enter password and advise that the login details are incorrect (to not be too descriptive).</li>
+					</ul>
+				</li>
+			</ul>
+		</li>	
+		<li>Function for password verification:
+			<ul>
+				<li>Open the csv file in the read mode.</li>
+				<li>Scan each line of the file for the email address provided during the login.</li>
+				<li>If the email address is found:
+					<ul>
+						<li>Return the stored password for the email address.</li>
+						<li>Encrypt the user provided password.</li>
+						<li>Compare the two passwords.</li>
+						<li>Return true if matched.</li>
+						<li>Return false if not matched.</li>
+					</ul>
+				</li>
+				<li>If the email address is not found, return false.</li>
+			</ul>
+		</li>
+		<li>Function for locking account:
+			<ul>
+				<li>Open the patient file in read mode.</li>
+				<li>Open another temporary csv file in write mode.</li>
+				<li>Search for the user email entered during the login. When found, update the account locked value to 1 for the row.</li>
+				<li>Write this updated row to the temporary file.</li>
+				<li>Write all other rows without changing from current patient file to temporary file.</li>
+				<li>Update the current patient file new to old file.</li>
+				<li>Update the temporary file new to current patient file.</li>
+				<li>Delete the old patient file.</li>
+			<ul>
+		</li>
+		<li>Function to check if the patient’s email already exists used for login:
+			<ul>
+				<li>Open the csv file in read mode.</li>
+				<li>If the email address of the patient exists in the file, return the email address and the account locked status.</li>
+			</ul>
+		</li>
+	</ol>
+</p>
+<p>Create password security class and assign it with the following functions:
+	<ol>
+		<li>Composition check function to count the number of special characters, numbers, upper case letters and empty spaces in the password entered by the user:
+			<ul>
+				<li>Define the list of special characters in a string.</li>
+				<li>Define the upper case letter count, number count, space count and special character count variables and set it all to 0.</li>
+				<li>Loop over each password character and increment one of the count variables by one if the character in password is either upper case, or a special character, 
+				or a white space or a number.</li>
+				<li>Return all the counts.</li>
+			</ul>
+		</li>
+		<li>Function which checks the password suitability using the counts from the function above:
+			<ul>
+				<li>Assign the composition check function to a variable.</li>
+				<li>Using ‘or’ confirm the password meets the following requirements.
+					<ul>
+						<li>Equal or more than 8 characters.</li>
+						<li>Less than 65 characters.</li>
+						<li>Doesn’t contain spaces</li>
+						<li>Contains at least one upper case.</li>
+						<li>Contains at least one number.</li>
+						<li>Contains at least one special character in the defined list of characters</li>
+					</ul>
+				</li>
+				<li>Loop over the function asking the user to enter the password each time the criteria is not met.</li>
+			</ul>
+		</li>
+		<li>Helper function to confirm that the password and password confirmation entered by the user match:
+			<ul>
+				<li>If password and password confirmation entered during the registration match, the password is returned and used in the registration.</li>
+				<li>If passwords do not match, the function is looped over and the user is asked to keep entering passwords until they match.</li>
+			</ul>
+		</li>
+		<li>Function for encrypting password:
+			<ul>
+				<li>Create a salt string using os.urandom method of 32 bytes and encrypt it using sha256 cryptographic hash function.</li>
+				<li>Encrypt the password entered by the user using the salt and sha256 method whilst iterating 100000 times for extra security.</li>
+				<li>Return the encrypted password to be passed to the registration function for storing.</li>
+			</ul>
+		</li>
+	</ol>
+</p>
+<p>Define function for the login page menu outside the classes:
+	<ul>
+		<li>Run the function for creating the patient file if one doesn’t exist.</li>
+		<li>Assign terminal input to a variable option.</li>
+		<li>If the option is ‘register’, call the register function from the patient class.</li>
+		<li>If the option is ‘login’, call the login function from the patient class.</li>
+		<li>If the option is ‘exit’, exit the terminal.</li>
+		<li>If none of the valid options are triggered, ask the user to pick a valid option.</li>
+	</ul>
+</p>
+<p>Call the login page function to start the registration/login process.</p>
+<br><br>
+<p>Testing scenarios:
+	<ol>
+		<li>Attempt to log in before an entry exist in the patient’s file. Not allowed.</li>
+		<li>Register a user using an invalid password. Not allowed.</li>
+		<li>Test password length boundaries when registering a user.</li>
+		<li>Register a user using two passwords which do not match. Not allowed.</li>
+		<li>Register various users using various format email addresses. Allowed.</li>
+		<li>Attempt to login in as a user not in the user file. Not allowed.</li>
+		<li>Attempt to login as the user in the file but use incorrect password. Not allowed. Make sure the number of login attempts remaining is correctly displayed each time.</li>
+		<li>Lock the user account by exceeding the log in attempts. Allowed. The user advised it’s locked.</li>
+		<li>Attempt to login as the locked-out user. Not allowed, message shown.</li>
+		<li>Login as the user who exists in the patient document and provide a correct password. Login must be allowed, and a message must be displayed confirming this.</li>
+		<li>Start up the terminal with options and exit it using the exit menu option.</li>
+		<li>Start up the menu in the terminal and enter an invalid choice, confirm the user is prompted to pick a valid one.</li>
+	</ol>
+</p>
