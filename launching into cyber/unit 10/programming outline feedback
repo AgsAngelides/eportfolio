@@ -1,0 +1,2 @@
+<p>Excellent outline. Has all the elements to make a perfect implementation. Just one comment: You don't  seem to encrypt user details before storing but rather 
+encrypt when retrieving. It should be the other way round - encrypt before storing and de-encrypt when retrieving</p>
