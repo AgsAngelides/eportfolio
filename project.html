@@ -696,7 +696,7 @@ login_page()
 		<h4>Testing summary</h4>
 		<p>The program was run in Codio and it was confirmed that the menu was displayed in the terminal with the following three options as expected: Login, Register and Exit. 
 		The ‘Patients.csv’ file was also correctly created upon the initial run.</p>
-		<p><img class="img-responsive" alt="" border="none" src="./launching into cyber/unit 12/image 1.png"></p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 1.png"></p>
 		<p>The Patient’s file was confirmed to have been populated with 4 columns: email, password, registered_on and login_attempts. The file was also confirmed to be empty 
 		except for the column titles.</p>
 		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 2.png"></p>
@@ -749,7 +749,26 @@ login_page()
 		<p>During the login upper case letters were used for the email to confirm it was correctly converted to the lower case before being compared to the email address value used 
 		in the database.</p>
 		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 17.png"></p>
-		<p>
+		<p>The program was run again and this time it was tried to log in with the registered user’s email address but an incorrect password. It was confirmed that this was not 
+		allowed, that the remaining login attempts were displayed (these should be 2) and that the login attempts were updated in the csv file to 2 as well.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 18.png"></p>
+		<p>To update the login attempts, a new temporary csv file had to be created whilst the old one had to be renamed. The old file was then deleted, and the temporary file 
+		was renamed to Patients. It was confirmed that all three users still existed in the new Patients file.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 19.png"></p>
+		<p>It was then attempted to login as the same person with an incorrect password two more times and it was confirmed that an ‘Account locked’ message was triggered and the 
+		program was exited. The login attempts count was also set to 0 in the file.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 20.png"></p>
+		<p>The program was started up again and it was tried to log in as the locked out person, it was confirmed that it was still not allowed and the message was displayed as soon 
+		as the email address was entered.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 21.png"></p>
+		<p>It was also confirmed that if the user uses capital letters in their email address when registering, these are converted to lower case letters before being stored in 
+		the csv file.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 22.png"></p>
+		<p>Lastly, the ‘exit’ menu option was used, and it was confirmed that the program was exited.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 23.png"></p>
+		<p>The Patient csv file was then deleted, and the program was run twice (exiting each time), confirming that the file size check worked correctly, and headers were not 
+		written to the file each time the program was run.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 24.png"></p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
