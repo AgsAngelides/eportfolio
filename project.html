@@ -696,7 +696,7 @@ login_page()
 		<h4>Testing summary</h4>
 		<p>The program was run in Codio and it was confirmed that the menu was displayed in the terminal with the following three options as expected: Login, Register and Exit. 
 		The ‘Patients.csv’ file was also correctly created upon the initial run.</p>
-		<p><img alt="" src="./launching into cyber/unit 12/image 1.png"></p>
+		<p><img class="img-responsive" alt="" border="none" src="./launching into cyber/unit 12/image 1.png"></p>
 		<p>The Patient’s file was confirmed to have been populated with 4 columns: email, password, registered_on and login_attempts. The file was also confirmed to be empty 
 		except for the column titles.</p>
 		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 2.png"></p>
@@ -725,7 +725,31 @@ login_page()
 				<li>The password must contain at least one whitespace.</li>
 			</ol>
 		</p>
-		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 9.png"></p>	
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 9.png"></p>
+		<p>A password meeting the requirements was input next, confirming this correctly triggers the password confirmation request.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 10.png"></p>
+		<p>A password different to the initial was then entered to confirm the user is asked to re-enter the passwords.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 11.png"></p>
+		<p>A password which doesn’t match the criteria was entered again to confirm that recurring function correctly triggers the password suitability checks.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 12.png"></p>
+		<p>A suitable password was provided next followed by entered a password which matches the initial password and then it was confirmed that the user is correctly notified 
+		upon the successful registration and taken back to the main menu.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 13.png"></p>
+		<p>The Patients csv file was then opened, and it was confirmed that the user was inserted into the file. The user’s email was confirmed to remain unchanged, the registration 
+		date was confirmed to be correct and the login_attempts were confirmed to be correctly set to 3 for a new user.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 14.png"></p>
+		<p>It was also confirmed that the password was hashed to the correct length of 128 characters. SHA256 hash function is 256 bits (32 bytes) long which is equal to 64 
+		hexadecimal characters (Anderson, 2020). The salt is 32 bytes long, so the total hashed password length must be 126 hexadecimal characters. The password length was verified 
+		in Excel using the LEN function.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 15.png"></p>
+		<p>A few more users were registered, and they were all stored in the Patients csv file as expected.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 16.png"></p>
+		<p>It was then tried to log in as one of these registered users confirming it is permitted. The password entered into the terminal should be hashed and compared to the one 
+		in the csv file. If the correct password was entered, the two should match and the user should be able to log in.</p>
+		<p>During the login upper case letters were used for the email to confirm it was correctly converted to the lower case before being compared to the email address value used 
+		in the database.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 17.png"></p>
+		<p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
