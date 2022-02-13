@@ -640,13 +640,63 @@ def login_page():
 print(menu_options)
 create_patient_file() # ensures file exists in case user tries to log in first
 login_page()
-
 		</code></pre>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672;Python Project README file</b></button>
 		<div class="content">
-		<p>TBC...</p>
+		<p>In the essay submitted in the unit 9 of the 'Launching into Cyber Security' module, a few spoofing threats were identified applicable to the appointment and 
+		scheduling management information system (ASMIS). These threats included taking over an existing user’s account and upgrading a lesser privileged account to one 
+		with more privileges.</p>
+		<p>For this reason, a program was written in Python (Downey, 2009) which enforces strong password practices, applies cryptographic hashing functions to protect this 
+		privileged data, locks the user accounts after too many incorrect login attempts and separates patients’ data from the more privileged staff data.</p>
+		<p>The program enforces the following password restrictions:
+			<ul>
+				<li>The password length must be between 8 and 64 characters. The 256-bit hashing function the program uses allows up to 64 hexadecimal characters (PythonPool, 2021).</li>
+				<li>The password must contain special characters, numbers and upper-case letters.</li>
+				<li>The password must contain at least one whitespace. Passwords with white spaces tend to be more secure (InfosecMatter, 2021). </li>
+			</ul>
+		</p>
+		<p>The code will also require users to confirm their password to help them catch any typos.</p>
+		<p>Passwords which meet all the requirements will then be hashed using the SHA-256 cryptographic hashing method and stored in the csv file together with the user’s email 
+		address, registration date and the number of login attempts (set to 3 by default for new users).</p>
+		<p>To log in to ASMIS, the users will have to enter their email address and password. The entered password will be hashed and compared to the one in the database. If the 
+		passwords match, the user will be allowed to login.</p>
+		<p>The login process was also designed to not reveal whether the user is registered or not, i.e. the login function will ask for both email address and password even if 
+		the user does not exist in the csv file.</p>
+		<p>Code execution instructions:
+			<ol>
+				<li>Run the program to view three menu options in the terminal: login, register and exit.</li>
+				<li>Option can be selected by typing it inside the terminal window and pressing ‘Enter’ on your keyboard.</li>
+				<li>If the register option is selected:
+					<ol>
+						<li>The patient must enter their email address.</li>
+						<li>The patient must enter their password which is longer than 8 characters, less than 65 characters, contains upper-case letters, special characters and 
+						whitespaces.</li>
+						<li>If the password meets the criteria, the user will be asked to repeat the password.</li>
+						<li>If the two passwords match, the user’s account will be created, and the user will be taken back to the menu where they can choose one of 
+						the three options again.</li>
+						<li>If the user’s account already exists, they will be notified when trying to register and taken to the login page instead.</li>
+					</ol>
+				</li>
+				<li>If the login option is selected:
+					<ol>
+						<li>The patient must enter their email address and password.</li>
+						<li>If the email address belongs to an existing user and the password matches the hashed password stored in the database, the user is logged in and the 
+						program exits.</li>
+						<li>If the email address belongs to a person who hasn’t yet registered, the user is asked to enter their password regardless. The user is then 
+						presented with an option to either continue with the login by inputting their email address or typing ‘exit’ to quit the application.</li>
+						<li>If the email belongs to an existing user but the password is incorrect, the user is only given 3 login attempts to access their account. When the number of 
+						login attempts is exceeded, the user’s account is locked, and the user is asked to contact the Reception.</li>
+					</ol>
+				</li>
+				<li>If the exit option is selected, the program exits.</li>
+			</ol>
+		</p>
+		<h4>Testing summary</h4>
+		<p>The program was run in Codio and it was confirmed that the menu was displayed in the terminal with the following three options as expected: Login, Register and Exit. 
+		The ‘Patients.csv’ file was also correctly created upon the initial run.</p>
+		<p><img class="img-responsive" alt="" src="./launching into cyber/unit 12/image 1.png"></p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
