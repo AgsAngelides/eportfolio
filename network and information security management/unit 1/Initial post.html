@@ -1,0 +1,21 @@
+<h3>Initial post</h3>
+<p>The Compromising Medical Mannequin paper (Glisson, 2015) reviews the cyber threats and vulnerabilities faced by the medical training facilities. Namely, the impact a malicious attack could 
+have on the education of medical professionals. An incorrectly set up mannequin due to tampering could influence the knowledge of medical students causing incorrect diagnosis and treatment of 
+patients down the line.</p>
+<p>The vulnerabilities applicable to the iStan medical mannequin, as discussed in this paper, include the TCP network protocol (vulnerable to DOS attacks) and the 802.11 wireless transmission used 
+to communicate between the mannequin and the control machines (vulnerable to brute force attacks).</p>
+<p>To mitigate the risk of DOS attacks rendering the iStan front-end software Muse unavailable, a network firewall could be used (Kartch, 2016). Such firewalls allow to set up a threshold of a permitted 
+number of incomplete TCP requests for a particular destination. When the threshold is exceeded, the requests remain in the queue until the completion or time out (Juniper Networks, 2021).</p>
+<p>The vulnerability introduced by the Wi-Fi Protected Setup (WPS) used in the 802.11 wireless transmission which allows brute force attacks by malicious actors within the radio range could be eliminated 
+by disabling the WPS feature (Cybersecurity & Infrastructure Security Agency, 2013). This would make it more difficult for an attacker to gain access to the Wi-Fi network. That said, due to the possible 
+medical device limitations, it may not be possible to use the regular password entry method to connect and further investigation may be required.</p>
+<br><br>
+<h4>References</h4>
+<br>
+<p>Glisson, W., Andel, T., McDonald, T., Jacobs, M., Campbell, M. & Mayr, J. (2015) Compromising a Medical Mannequin. Healthcare Information Systems and Technology (Sighealth).</p>
+<p>Kartch, R. (2016) Distributed Denial of Service Attacks: Four Best Practices for Prevention and Response. 
+Available from: https://insights.sei.cmu.edu/blog/distributed-denial-of-service-attacks-four-best-practices-for-prevention-and-response/ [Accessed 11 March 2022].</p>
+<p>Juniper Networks (2021) Network DoS Attacks. Available from: https://www.juniper.net/documentation/us/en/software/junos/denial-of-service/topics/topic-map/security-network-dos-attack.html 
+[Accessed 11 March 2022].</p>
+<p>Cybersecurity & Infrastructure Security Agency (2013). Wi-Fi Protected Setup (WPS) Vulnerable to Brute-Force Attack. Available from: https://www.cisa.gov/uscert/ncas/alerts/TA12-006A 
+[Accessed 11 March 2021].</p>
