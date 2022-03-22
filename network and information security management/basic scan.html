@@ -1,0 +1,68 @@
+<p><b>Assigned website:</b> loadedwithstuff.co.uk</p>
+<p><b>How many hops from your machine to your assigned website?</b>
+<br><br>
+Results were obtained using TRACERT [your website] command.
+<br><br>
+There were 12 hops.
+</p>
+ 
+<p><b>Which step causes the biggest delay in the route? What is the average duration of that delay?</b>
+<br><br>
+Hop 3 had the highest latency. The first packet of the 3rd hop timed out and the 2nd packed took 45ms. Since the RTT has dropped down after the time out, it could just mean that router at the 
+3rd hope set the signal to a low priority (Mitchell, 2021). Average is 21ms using ping command. The said hop is based in Netherlands, hence, it could be timing out due to the geographical location and 
+proximity to my machine.
+<br><br>
+The next hop with the highest latency is the hop number 11, second packet – RTT took a total of 57ms. Average is 41ms using ping command. This hop is in Sweden and it could be the cause of the delay.
+</p>
+
+<p><b>What are the main nameservers for the website?</b>
+<br><br>
+The results below were obtained using WHOIS command:
+	<ul>
+		<li>ns1.a2hosting.com</li>
+		<li>ns2.a2hosting.com</li>
+		<li>ns3.a2hosting.com</li>
+		<li>ns4.a2hosting.com</li>
+	</ul>
+</p>
+
+<p><b>Who is the registered contact?</b>
+<br><br>
+The results below were obtained using WHOIS command.
+<br><br>
+eNom LLC [Tag = ENOM]
+URL: http://www.enom.com
+</p>
+
+<p><b>What is the MX record for the website?</b>
+<br><br>
+MX means mail exchange. It indicates how email messages should be routed in in accordance with the Simple Mail Transfer Protocol (SMTP).
+<br><br>
+The website https://mxtoolbox.com was used to look it up.
+<br><br>
+mail.loadedwithstuff.co.uk
+</p>
+
+<p><b>Where is the website hosted?</b>
+<br><br>
+The location was obtained by getting the IP address of the URL from the traceroute results and then looking up the IP address using the IP location finder tool: https://tools.keycdn.com/
+<br><br>
+The IP address belonging to the loadedwithstuff.co.uk website is hosted in the US (Reno County, Kansas).
+</p>
+
+<p>Difficulties I had and ways I have overcome it:
+	<ul>
+		<li> My windows 10 machine did not have the whois package installed, so I had to install it before I could look up who owns the domain we were given.</li>
+		<li>I was getting confused between Linux and Windows command line statements. Many online resources do not make it clear upon first look which of the two OS it applies to.</li>
+		<li>Nslookup command in command prompt for looking up the MX record of the website, does not work on my machine. Potentially a configuration issue. I had to use an online tool instead to 
+		obtain the information.</li>
+		<li>Trying to run a traceroute command directly in the command line would not work. I had to cd first to the folder where the tracert exe was stored to be able to use this command.</li>
+	</ul>
+</p>
+
+<p><b>References</b>
+<br><br>
+Mitchell, S. (2021) How to Read a Traceroute. Available from: https://www.inmotionhosting.com/support/server/ssh/read-traceroute/ [Accessed 22 March 2022].
+<br><br>
+DAPCE (2021) CAPEC-293: Traceroute Route Enumeration. Available from: https://capec.mitre.org/data/definitions/293.html [Accessed 22 March 2022].
+</p>
