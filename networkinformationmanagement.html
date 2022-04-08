@@ -50,6 +50,22 @@
 	img {
 		border: 2px solid #555;
 	}
+	
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	td, th {
+	  border: 1px solid #dddddd;
+	  text-align: left;
+	  padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
 </style>
 
 
@@ -310,6 +326,103 @@
 	<p>In the unit 5 we are looking at the various network components (switches, routers, firewalls, etc), when and how to use it as well as any related 
 		security implications. We are also going to be learning about the role of these components in the cloud environments and discussing network 
 		diagnostic tools such as packet sniffers and scanners.</p>
+		
+		<button type="button" class="collapsible"><b>&#9672; Seminar 3 preparation</b></button>
+		<div class="content">
+		<p>For the seminar 3 preparation, we have been asked to read a blog post “Geer, D. (2015) 8 Penetration Testing Tools That Will Do the Job. (Network World). All pen security tools in the post 
+		were then rated by myself from 1 to 5 (5 being the highest/most popular) in the following categories: Ease of install, Ease of use, Flexibility, Licensing and Reputation.</p>
+		<p>I have used 1 for Reputation when the tool was new and not known, and 5 for well-established tools.</p>
+		<p>When it came to licensing, I rated open-source free tools at 5, and paid ones based on their price, 1 being the most expensive one.</p>
+		<p>When it came to flexibility, I rated it based on the OS each tool supports and the amount of configuration it allows the user to do.</p>
+		<p>Ease of use was rated based on how much automation each tool provided and if it required other additional knowledge to run it, e.g. know Linux command line, etc.</p>
+		<p>I have also removed the Privacy rating from my scores, as I felt it was unnecessary and confusing.</p>	
+		<p>The highest rated tools in my assessment were Metasploit and OWASP ZAP. It seems that it came down to price and the ease of use; i.e. the paid tools lost a lot of points in my assessment. 
+		The Linux only based tools were the lowest rated ones in my case, because they were limited to being used on one OS only, despite being free and having a good reputation. Also, Linux only 
+		tools require Linux knowledge, which is also another downside, in my opinion.</p>
+		<table>
+		  <tr>
+			<th>Tool name</th>
+			<th>Ease of install</th>
+			<th>Ease of use</th>
+			<th>Flexibility</th>
+			<th>Licensing</th>
+			<th>Reputation</th>
+			<th>TOTAL</th>
+		  </tr>
+		  <tr>
+			<td>Metasploit</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>25</td>
+		  </tr>
+		  <tr>
+			<td>Nessus Vulnerability Scanner</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>2</td>
+			<td>5</td>
+			<td>22</td>
+		  </tr>
+		  <tr>
+			<td>Nmap</td>
+			<td>5</td>
+			<td>4</td>
+			<td>5</td>
+			<td>4</td>
+			<td>5</td>
+			<td>24</td>
+		  </tr>
+		  <tr>
+			<td>Burp Suite</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>1</td>
+			<td>5</td>
+			<td>21</td>
+		  </tr>
+		  <tr>
+			<td>OWASP ZAP</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>25</td>
+		  </tr>
+		  <tr>
+			<td>SQLmap</td>
+			<td>5</td>
+			<td>3</td>
+			<td>5</td>
+			<td>5</td>
+			<td>5</td>
+			<td>23</td>
+		  </tr>
+		  <tr>
+			<td>Kali Linux</td>
+			<td>4</td>
+			<td>2</td>
+			<td>1</td>
+			<td>5</td>
+			<td>5</td>
+			<td>17</td>
+		  </tr>
+		  <tr>
+			<td>Jawfish</td>
+			<td>5</td>
+			<td>2</td>
+			<td>1</td>
+			<td>5</td>
+			<td>1</td>
+			<td>15</td>
+		  </tr>
+		</table>
+		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
