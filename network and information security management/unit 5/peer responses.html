@@ -1,0 +1,136 @@
+<p><b>Note:</b>Please refer to the earlier Unit for the 'Initial post' details.</p>
+
+<p>Peer response from Andrijana Klacar on Group 1 Initial post (2022):
+<blockquote> <cite>
+	<p>Hi Agne and Group 1,
+	<br><br>
+	Your Initial Post is very informative and the scanning results are quite interesting.
+	<br><br>
+	Although IP GeoLocation is not 100% accurate, it could be considered reliable, especially if one is looking for just the country. Granted, looking for a city or identifying a zip code of a website, is much less accurate and the reasons could be that the user is hiding their location with the use of proxies and VPNs (Luna, 2021) or it could be that the data in the registrar IP database is not updated (Jil, 2018). I completely understand why you would be sceptical about the trans-Atlantic hop your group member encountered as they reside in North America.
+	<br><br>
+	Do you think there could be another reason your group member had that interesting trans-Atlantic hop? How exactly did you conclude the hosting server is located in Amsterdam?
+	<br><br>
+	References:
+	<br><br>
+	Jil (2018) How accurate (reliable) is IP GeoLocation?. Available from: https://support.clickmeter.com/hc/en-us/articles/211035626-How-accurate-reliable-is-IP-GeoLocation- [Accessed 9 April 2022].
+	<br><br>
+	Luna, C. (2021) How accurate is IP geolocation?. Available from: https://blog.maxmind.com/2021/07/how-accurate-is-ip-geolocation [Accessed 9 April 2022].
+	</cite></blockquote>
+</p>
+<br><br>
+
+<p>Kevin Peuhkurinen response to Andrijana's Peer response (2022):
+<blockquote> <cite>
+	<p>Hi Andrijana and thank you for the response. To help explain my rationale for arguing that the site is in Amsterdam, it is helpful to look at the results of my tracepath:
+	<br><br>
+	1?: [LOCALHOST] pmtu 1500
+	<br><br>
+	 1:  _gateway (192.168.68.1)                               4.235ms <br>
+	 1:  _gateway (192.168.68.1)                               6.082ms <br>
+	 2:  DeviceDHCP.Home (192.168.1.1)                         7.360ms <br>
+	 3:  192.24.36.1 (192.24.36.1)                             9.825ms <br>
+	 4:  pkt.64.235.packetworks.net (64.235.104.200)          10.543ms <br>
+	 5:  pkt.64.235.packetworks.net (64.235.104.6)            11.186ms <br>
+	 6:  hu0-5-0-2.ccr32.yyz02.atlas.cogentco.com (38.122.69.145)  11.235ms <br>
+	 7:  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  16.955ms <br>
+	 8:  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  87.782ms <br>
+	 9:  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  97.440ms <br>
+	10:  be2283.rcr21.b038092-0.ams03.atlas.cogentco.com (130.117.51.14)  98.533ms <br>
+	11:  euroaccess-ltd.demarc.cogentco.com (149.6.128.82)    97.116ms <br>
+	12:  v402.R2.NL1.a2webhosting.com (209.124.94.239)       106.195ms <br>
+	13:  68.66.247.187.static.a2webhosting.com (68.66.247.187)  95.828ms reached 
+	<br><br>
+	Internet providers often use IATA airport codes to identify the geographic location of routers on their network (Lamberti, 2020). In the tracepath, you can see that my local Internet Service Provider hands off my packets at hop 6 to Cogent Communications. Cogent clearly uses IATA codes, so you can read the path from hop 6 in Toronto (YYZ) to hop 7 in Montreal (YMQ) to hop 8 in Liverpool (LPL) to hop 9 in Amsterdam (AMS). At that point, Cogent hands the packets off to A2 Hosting for the last mile to our target server. If the packets continued back from Amsterdam to the USA, we would see additional hops after that.
+	<br><br>
+	It is also important to note that my longest delay occurs between 7 and 8, which is a trans-Atlantic hop from Montreal to Liverpool. Routing on the Internet is controlled by the Border Gateway Protocol (BGP). BGP uses many different factors to select a routing path, but generally speaking it tries to select the shortest, fastest, and/or most efficient route (IPXO, 2022). If the site really is in the USA, it would be illogical for my packets to go from Canada to the UK to the Netherlands, and then back across the ocean to the USA. 
+	<br><br>
+	References
+	<br><br>
+	IPXO. 2022. What is BGP? The Complete Guide to Border Gateway Protocol. Available at: https://www.ipxo.com/tutorial/what-is-bgp/ (Accessed: 9 April 2022).
+	<br><br>
+	Lamberti, Alyssa. 2020. Decode the Hidden Information from Traceroute DNS (2020). Available at: https://medium.com/obkio/decode-the-hidden-information-from-traceroute-dns-ecee10e4b3d1 (Accessed: 9 April 2022).
+	</cite></blockquote>
+</p>
+<br><br>
+
+<p>Peer response from Jurbe Jubet on Kevin's response (2022):
+<blockquote> <cite>
+	<p>
+	Hi Kevin,
+	<br><br>
+	Thank you Kevin for this information on BGP. 
+	<br><br>
+	Your group really had an interesting post worth studying. You also made it quite simple to understand and follow. 
+	<br><br>
+	As you rightly observed, the BGP uses different factors in selecting its routing path. One of such factors is the ASN (Autonomous system number). This is a number assigned to a network or a collection of networks that are all managed, controlled and supervised by a single entity or organization within the BGP routing policy. BGP uses the ASN to uniquely identify each of such systems (www.thousandeyes.com., N.D). While checking the ASN, I observed something I want to share with you. 
+	<br><br>
+	The Internet service provider Cogentco, maintains a BGP IP routing information with ASN 55293, which featured its linked route from its router, euroaccess-ltd.demarc.cogentco.com (hop 10), to the web hosting router v402.R2.NL1.a2webhosting.com(Hop 11) (publicdata.caida.org., N.D)
+	<br><br>
+	A look up on the ASN number 55293 indicates this ASN is linked with A2 Hosting Inc located in USA, pairing with cogent communications also in USA (bgp.tools., N.D).
+	<br><br>
+	This suggest that the route was moved back to USA from Amsterdam, that is from hop 10 to hop 11 still within the cogentco network, before arriving at v402.R2.NL1.a2webhosting.com(hop 12), still in the USA.
+	<br><br>
+	Another observation to suggest the packet was possibly moved back to the US, is the Latency of 106.195ms between hop 10 and hop 11, which appears to have a high Latency, and may indicate that the packet was routed through a longer distance. 
+	<br><br>
+	References
+	<br><br>
+	www.thousandeyes.com. (N.D.). What are Autonomous System Numbers (ASN) for Internet? | ThousandEyes. [online] Available from: https://www.thousandeyes.com/learning/glossary/as-autonomous-system.
+	<br><br>
+	publicdata.caida.org. (n.d.). Router Naming Convention for cogentco.com. [online] Available From: https://publicdata.caida.org/datasets/supplement/2020-imc-hoiho/web/201708-node2as/cogentco.com.html [Accessed 10 Apr. 2022].
+	<br><br>
+	bgp.tools. (n.d.). AS55293 A2 Hosting, Inc. - bgp.tools. [online] Available From: https://bgp.tools/as/55293 [Accessed 10 Apr. 2022].</p>
+	</cite></blockquote>
+</p>
+<br><br>
+
+<p>Kevin's response to Jurbe's 'Peer response' (2022):
+<blockquote> <cite>
+	<p>
+	Hi Jurbe. 
+	<br><br>
+	Zorz (2019) describes how cognitive biases can undermine cybersecurity programs. Particularly relevant for this topic is anchoring and confirmation bias. Anchoring bias describes our tendency to accept the first piece of information that we come across as the absolute truth, and confirmation bias describes our tendency to only look for evidence that fits our theories. In this situation, I cannot help but feel that a number of people have performed a web-based IP address geolocation on the site and have 'anchored' onto the result that the site should be in the USA. Confirmation bias has then prevented them from critically examining this anchor, and instead caused them to look only for data that supports this theory.
+	<br><br>
+	To address your specific point, Yacobi-Keller, et. al. (2009) describe how IP addresses associated with a single autonomous system (AS) need not be in a single country or even a single continent. 
+	<br><br>
+	References
+	<br><br>
+	Yacobi-Keller, U., Savin, E., Fabian, B., and Ermakova, E. (2009) Towards geographical analysis of the autonomous system network. Available at: https://www.researchgate.net/publication/321183657_Towards_Geographical_Analysis_of_the_Autonomous_System_Network (Accessed 11 April 2022)
+	<br><br>
+	Zorz, Zeljka. (2019) How human bias impacts cybersecurity decision making - Help Net Security. Available at: https://www.helpnetsecurity.com/2019/06/10/cybersecurity-decision-making/ (Accessed: 11 April 2022).
+	</p>
+	</cite></blockquote>
+</p>
+<br><br>
+
+<p>My response to Kevin's response on Jurbe's 'Peer response' (2022):
+<blockquote> <cite>
+	<p>
+	Hi Jurbe,
+	<br><br>
+	thank you for your response.
+	<br><br>
+	When I did my basic scans and analysed my traceroute results, I was of the same opinion to start with - I could swear that the web server was hosted in the US. However, as Kevin has mentioned up above, the IP geolocation lookup tools should probably be used more carefully and the location provided should be verified against other factors (delays between hops, router titles).
+	<br><br>
+	Whilst researching on this subject to prepare for team discussion, I found quite a lot of information which explains how these location lookup services work and why they often lack accuracy. Dan et al. in their paper (2021) on the IP geolocation lookup through reverse DNS does a very good job at explaining it. For example, most of these location lookup services use a topology or a network delay method. The latter issues pings to your provided IP address from different geographical locations, measures the delay and then triangulates into an approximate location. However, routes taken to the target IP address do not always correspond to geographical routes, there are also scalability issues (many servers are required to conduct multiple pings to the same IP address for accurate results). Due to these reasons, you often get an incorrect location when using a geolocation lookup tools available.
+	<br><br>
+	There is also IP availability issue to consider. Many companies lease IP addresses from a pool of IP addresses available in another company. These leased addresses will be registered to the service provider company rather than the company leasing it, and so if the IP location lookup tool is using the registered address, then you would get the address of the service provider rather than the actual location of your device (a2hosting, 2022).
+	<br><br>
+	References
+	<br><br>
+	Dan, O., Parikh, V., Davidson, B., D. (2021). IP Geolocation through reverse DNS. ACM Transactions on Internet Technology 22(1): 1-29.
+	<br><br>
+	a2hosting (2022) Off-Shore IP addresses. Available from: https://www.a2hosting.co.uk/kb/getting-started-guide/internet-and-networking/off-shore-ip-addresses [Accessed 13 April 2022].
+	</p>
+	</cite></blockquote>
+</p>
+<br><br>
+<p><b>References</b>
+<br><br>
+Klacar, A. (2022) Peer response. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719#/mod/hsuforum/discuss.php?d=303719&postid=1057724 [Accessed 13 April 2022].
+<br><br>
+Peuhkurinen, K. (2022) Peer response. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719#/mod/hsuforum/discuss.php?d=303719&postid=1057724 [Accessed 13 April 2022].
+<br><br>
+Jubet, J. (2022) Peer response. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719#/mod/hsuforum/discuss.php?d=303719&postid=1057724 [Accessed 13 April 2022].
+<br><br>
+Angelides, A. (2022) Peer response. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719#/mod/hsuforum/discuss.php?d=303719&postid=1057724 [Accessed 13 April 2022].
+</p>
