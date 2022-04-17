@@ -1,0 +1,120 @@
+<p>I have performed various scans on our assigned website loadedwithstuff.co.uk using Kali Linux.</p>
+
+<p>Readily available Kali Linux package powered by Debian (64bit) was used and installed as a VM on a Virtual box. In addition, I used ProtonVpn during 
+  all of my scans.</p>
+
+<p>The following scanning tasks were addressed.</p>
+
+<p><b>What OS does the website utilise?</b>
+  <br><br>
+  I used the OS fingerprinting provided by Nmap to find out the details on the OS and the command nmap -O [IP address].
+  <br><br>
+  Nmap could not locate one open and one closed port (there were only open ports available at the time of the scan) and so accurate results could 
+  not be returned, only the best estimate as below (or aggressive OS guesses, as Nmap calls it):
+  <ul>
+    <li>Linux 4.15 – 5.6 (89%)</li>
+    <li>Linux 5.0 – 5.4 (89%)</li>
+    <li>Linux 5.3 – 5.4 (89%)</li>
+    <li>Linux 2.6.32 (89%)</li>
+    <li>Linux 5.0 (88%)</li>
+    <li>Linux 5.0 – 5.3 (88%)</li>
+    <li>Linux 5.4 (88%)</li>
+    <li>Linux 3.1 (87%)</li>
+    <li>Linux 3.2 (87%)</li>
+    <li>AXIS 210A or 211 Network Camera (Linux 2.6.17) (87%)</li>
+</ul>
+</p>
+
+<p><b>What web server software is running?</b>
+  <br><br>
+  For this task I used Kali Linux Nikto package and the command nikto -h [website URL].
+  <br><br>
+  The results returned said that the web server is running on Apache, however, the server banner has been recently changed from Apache to 
+  imunify360-webshield/1.18. It appears the web server uses Webshield to prevent HTTP attacks (Zemskov, 2019).
+  <br><br>
+  I have also tried whatweb [website URL] command, but I kept getting the error of 'connection reset by peer', which could indicate a firewall closing the connection prematurely (Eadie, 2022).
+</p>
+
+<p><b>Is it running a CMS (Wordpress, Drupal, etc.)?</b>
+<br><br>
+I tried obtaining this information using CMSeeK tool (GeeksForGeeks, 2021) on Kali (had to download it and install it) and no CMS was found.
+<br><br>
+Then I used whatweb loadedwithstuff.co.uk command and the results had not returned any CMS either.
+<br><br>
+I did some research, and a2hosting does provide various CMS options, however, our test website has been created using Softaculous scripts which, I assume, 
+  did not enable any of the available managers.
+</p>
+
+<p><b>What protection does it have (CDN, Proxy, Firewall)?</b>
+<br><br>
+Wafw00f – is a firewall fingerprinting tool which runs on Python scripts and is part of Kali Linux package (Kali, 2021).
+<br><br>
+Running the command wafw00f loadedwithstuff.co.uk told me that it uses imunify360 (CloudLinux) Web Application Firewall.
+<br><br>
+I do not think that the website uses any CDN. I did some research and a2hosting provides CDN through Cloudflare (a2hosting, 2022). However, when I ran 
+  the WHOIS command, Cloudflare was not returned in any of the scan results (InfosecMatter, 2020) which implies CND is not used. It appears CDN is 
+  not enabled for loadedwithstuff.co.uk.
+<br><br>
+I also think that the website does not use a proxy. I used the URLextractor tool and the command ./extractor.sh loadedwithstuff.co.uk and the results 
+  returned no PAX (Proxy Authentication Configuration) file, which seems to imply a proxy is not used (Son, 2019).
+</p>
+
+<p><b>Where is it hosted?</b>
+<br><br>
+I used the URLextractor tool for this and the command ./extractor.sh loadedwithstuff.co.uk.
+<br><br>
+The scan confirmed that the web server is hosted in Amsterdam, Netherlands.
+</p>
+
+<p><b>Does it have any open ports?</b>
+<br><br>
+I used Nmap to scan for open ports. I scanned up to 7000 open ports using the command below and the scan returned 7000 tcp open ports. It appears the 
+  website has many open ports, and if I had increased my scan range, I probably would have found many more.
+<br><br>
+Nmap -T4 -v -PN -n -sS –top-ports 7000 –max-parallelism 10 -oA nmapSYN [IP address]
+</p>
+
+<p><b>Does the site have any known vulnerabilities?</b>
+<br><br>
+I used Nikto vulnerability scaner for this and two commands
+  <ul>
+    <li>nikto -h [website URL]</li>
+    <li>nikto -h [website URL] -ssl</li>
+</ul>
+<br>
+The following vulnerabilities were located:
+<ul>
+  <li>The anti-clickjacking x-frame-options header is not present.</li>
+  <li>The x-xss-protection header is not defined.</li>
+  <li>The site uses SSL and the STS HTTP header is not defined.</li>
+  <li>The site uses SSL and Expect-CT header is not present.</li>
+  <li>The X-content-type-options header is not set. This could allow the user agent to render the content of the site in a different fashion 
+    to the MIME type.</li>
+</ul>
+<br>
+Interestingly, the scan terminated a few times when the allowed range of errors (20 errors) was exceeded. I have increased the nikto.conf FAILURE value to 
+50 and ran the scan again (github, 2018).</p>
+
+<p><b>What versions of software is it using? Are these patched so that they are up to date?</b>
+  <br><br>
+I could not locate the software version. The only information I was able to find, as per above, tha Apache is used, however, I was unable to locate 
+  more information.</p>
+
+<p><b>References</b>
+  <br><br>
+Zemskov, G. (2019) Wenshield introduction for server administrators. Available from: https://blog.imunify360.com/webshield-introduction-for-server-administrators-1 [Accessed 17 April 2022].
+  <br><br>
+Eadie, C. (2022) Web page says 'Connection reset by peer'. Available from: https://support.accurx.com/en/articles/2405702-web-page-says-connection-reset-by-peer [Accessed 17 April 2022].
+  <br><br>
+GeeksForGeeks. (2021) CMSeeK - CMS Detection and Exploitation Tool. Available from: https://www.geeksforgeeks.org/cmseek-cms-detection-and-exploitation-tool/ [Accessed 17 April 2022].
+  <br><br>
+Kali. (2021) Wafw00f. Available from: https://www.kali.org/tools/wafw00f/ [Accessed 16 April 2022].
+  <br><br>
+a2hosting. (2022) What is Cloudflare CDN? Available from: https://www.a2hosting.com/kb/add-on-services/cloudflare/what-is-cloudflare [Accessed 16 April 2022].
+  <br><br>
+InfosecMatter (2020) How to Port Scan a Website. Available from: https://www.infosecmatter.com/how-to-port-scan-a-website/ [Accessed 16 April 20220].
+  <br><br>
+Son, D. (2019) URLextractor: Information gathering & website reconnaissance. Available from: https://securityonline.info/urlextractor/ [Accessed 16 April 2022].
+  <br><br>
+github (2018) Increase Limit - Error limit (20) reached for host, giving up. Last error: error reading HTTP response #549. Available from: https://github.com/sullo/nikto/issues/549 [Accessed 17 April 2022].
+</p>
