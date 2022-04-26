@@ -1,0 +1,63 @@
+<p>For the seminar in Unit 8 we have been asked to read the following articles/documents:
+	<ul>
+		<li>ICO (2020) Guide to the General Data Protection Regulation (GDPR).</li>
+		<li>PCI Security Standards.org (2020) Official PCI Security Standards Council Site - PCI Security Standards Overview. </li>
+		<li>HIPAA (2020) HIPAA For Dummies – HIPAA Guide.</li>
+	</ul>
+</p>
+<p>We then had to attempt the following list of questions.</p>
+<p><b>Which of the standards discussed in the sources above would apply to the website/ organisation assigned to you for the assessment? For example, a company 
+providing services to anyone living in Europe or a European-based company or public body would most likely be subject to GDPR. A company handling online payments would 
+most likely need to meet PCI-DSS standards.</b></p>
+<p>The General Data Protection (GDPR) would apply to our assigned website loadedwithstuff.co.uk as well as its UK counterpart Data Privacy Act 2018 within which the GDPR is a 
+component. This is based on the assumptions that the website targets UK market for customers because of its domain being a UK one. The EU GDPR, specifically Dutch version of it, 
+applies too, because the webserver appears to be located in Amsterdam and so the data will be stored and processed within the EU.</p>
+<p>In addition to the data protection regulations, PCI DSS SAQ A also applies to our given website. I believe that the full PCI DSS regulations are not applicable, since the website 
+appears to have outsourced its payment processing to an external provider, thus only the SAQ A questionnaire should be applicable to loadedwithstuff.co.uk which consist of less requirements (PCI, 2014).</p>
+<p><b>Evaluate your assigned website against the appropriate standards and decide how you would check if standards were being met?</b></p>
+<p>To confirm it meets the PCI DSS SAQ A requirements you would (Securious, 2022).
+	<ul>
+		<li>Have to complete an annual self-assessment questionnaire and get it signed by the company’s officer.</li>
+		<li>Have to submit the annual AOC (Attestation of compliance).</li>
+		<li>Have to conduct quarterly network scans conducted by an Approved Scan Vendor (ASV).</li>
+	</ul>
+</p>
+<p>To meet the GDPR requirements (including the UK version – DPA), the website must (GDPR, 2018):
+	<ul>
+		<li>Have a Privacy policy which meets the GDPR/DPA requirements.</li>
+		<li>Have a Cookie policy and seek user’s permission for tracking their behaviour via the cookies.</li>
+		<li>Store its data securely.</li>
+		<li>Be able to resolve all user data requests.</li>
+		<li>Be able to secure all systems related to the website’s infrastructure.</li>
+	</ul>
+</p>
+<p><b>What would your recommendations be to meet those standards?</b></p>
+<p>To meet the PCI DSS standard applicable to websites which have outsourced its payments to an external vendor, I would recommended:
+	<ul>
+		<li>Adding PCI compliance requirements to the business security policy, including intervals at which each compliance activity must be performed and the external payments vendor audits.</li>
+		<li>Assigning one responsible person who would have to manage the compliance to these regulations.</li>
+	</ul>
+</p>
+<p>To meet the GDPR requirements I would recommend:
+	<ul>
+		<li>Either appointing a data officer who would be responsible for managing compliance to this regulation OR outsourcing the initial compliance work to an externa vendor and then 
+		assigning day to day compliance oversight (user data requests, right to erasure, right to data correction, etc) role to an existing role within the company.</li>
+		<li>Conducting external website provider audits to ensure that the systems and data security standards are met.</li>
+		<li>Updating the business security policy to include GDPR requirements, how the company will achieve these.</li>
+	</ul>
+</p>
+<p><b>What assumptions have you made?</b></p>
+<p>The following assumptions have been made:
+	<ul>
+		<li>The page target audience are UK customers.</li>
+		<li>The page has outsourced its payments to an external vendor.</li>
+	</ul>
+</p>
+<p><b>References</b>
+<br><br>
+ICO (2020) Guide to the General Data Protection Regulation (GDPR). Available from: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/ [Accessed 26 April 2022].
+<br><br>
+Securious. (2022) PCI Compliance UK – ultimate guide. Available from: https://securious.co.uk/pci-compliance-uk-ultimate-guide/ [Accessed 26 April 2022].
+<br><br>
+PCI. (2014) Payment Card Industry (PCI) Data Security Standard. Self-Assessment Questionnaire A and Attestation of Compliance. Available from: https://www.pcisecuritystandards.org/documents/SAQ_A_v3.pdf [Accessed 26 April 2022].
+</p>
