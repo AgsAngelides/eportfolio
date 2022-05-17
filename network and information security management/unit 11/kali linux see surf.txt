@@ -1,0 +1,29 @@
+Kali Linux - see-SURF tool SSRF scan results
+──(kali㉿kali)-[~/See-SURF]
+└─$ python3 see-surf.py -H https://loadedwithstuff.co.uk 
+
+ ### #### ####        ### #   # ###   #### # # 
+#    #    #          #    #   # #  #  #    # # 
+#    #    #          #    #   # #  #  #    # # 
+ ##  ###  ###  #####  ##  #   # ###   ###  # # 
+   # #    #             # #   # # #   #        
+   # #    #             # #   # #  #  #    # # 
+###  #### ####       ###   ###  #   # #    # # 
+
+Target URL - https://loadedwithstuff.co.uk
+
+
+Starting Crawling
+
+[-] Potential vulnerable 'GET' parameter Name 'cPath' at 'https://loadedwithstuff.co.uk/index.php?rt=core/index&cPath=3'                                  
+[-] Potential vulnerable 'GET' parameter Name 'tPath' at 'https://loadedwithstuff.co.uk/articles.php?tPath=1'                                             
+[-] Potential vulnerable 'GET' parameter Name 'CDpath' at 'https://loadedwithstuff.co.uk/index.php?rt=core/pages&pID=11&CDpath=2'                         
+[-] Potential vulnerable 'GET' parameter Name 'lPath' at 'https://loadedwithstuff.co.uk/index.php?rt=core/links&lPath=4'                                  
+[-] Potential vulnerable 'FORM' parameter Name 'return_to' at 'https://loadedwithstuff.co.uk/index.php?rt=core/index&action=buy_now&products_id=20&cPath=3_5'                                                                          
+[-] Potential vulnerable 'FORM' parameter Name 'login_return_to' at 'https://loadedwithstuff.co.uk/index.php?rt=core/index&action=buy_now&products_id=20&cPath=3_5'                                                                    
+[-] Potential vulnerable 'GET' parameter Name 'goto' at 'https://loadedwithstuff.co.uk/index.php?rt=core/redirect&action=links&goto=1'                    
+HTTPConnectionPool(host='asus%20covers', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdf504f6fd0>: Failed to establish a new connection: [Errno -2] Name or service not known'))                                                      
+[-] Potential vulnerable 'GET' parameter Name 'reviews_id' at 'https://loadedwithstuff.co.uk/index.php?rt=core/article_reviews_info&articles_id=3&reviews_id=1'                                                                        
+HTTPConnectionPool(host='asus%20covers', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdf483dd190>: Failed to establish a new connection: [Errno -2] Name or service not known'))                                                      
+                                                                             
+Process Completed                      
