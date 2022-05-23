@@ -1238,6 +1238,180 @@
 				requirements, with no points of SQL injection (Pentest Tools, 2022).</td>
 			</tr>
 		</table>
+		<p><b>Recommendations</b>
+		<br><br>
+		Recommendations on this report are based on the security vulnerabilities discussed in Tables 2 and 3. The list has been ordered based on its business priority which 
+		correlates to vulnerability DREAD risk rankings.
+		<table>
+			<caption><i>Table 3: List of recommendations ordered by business priority.</i></caption>
+			<tr>
+				<th>OWASP category</th>
+				<th>Business Priority</th>
+				<th>Recommendations</th>
+			</tr>
+			<tr>
+				<td>A01:2021</td>
+				<td>High</td>
+				<td>Deny access by default to all pages except public resources (OWASP, 2017).<br><br>Build access control mechanisms and implement it across the whole tool.<br><br>
+				Assign records, e.g. shopping carts, to the record owner.</td>
+			</tr>
+			<tr>
+				<td>A07:2021</td>
+				<td>High</td>
+				<td>Introduce password complexity by forcing users to include a mix of numbers, letters and special characters.<br><br>Place a limit or increasingly delay failed 
+				login attempts. Implement brute force protection and account lockout policy.<br><br>Implement Multi Factor authentication(OWASP, 2021).</td>
+			</tr>
+			<tr>
+				<td>A05:2021</td>
+				<td>High</td>
+				<td>Disable the FTP protocol and use SSH File Transfer Protocol (SFTP) instead (Stahnke, 2006).</td>
+			</tr>
+			<tr>
+				<td>A06:2021 & A08: 2021</td>
+				<td>Medium</td>
+				<td>Implement version management, frequently check for patches and upgrade all libraries to the latest version (Zhang et al, 2021).</td>
+			</tr>
+			<tr>
+				<td>A07:2021</td>
+				<td>Medium</td>
+				<td>Update Softaculous to the latest version and implement good patching processes (NVD, 2022).</td>
+			</tr>
+			<tr>
+				<td>A08:2021</td>
+				<td>Low</td>
+				<td>Add a temporary (with short expiry period) unpredictable valid token to any form submission (scanRepeat, 2022).</td>
+			</tr>
+			<tr>
+				<td>A02:2021</td>
+				<td>Low</td>
+				<td>Enable HTTP Strict Transport Security on the server (OWASP, 2012).</td>
+			</tr>
+			<tr>
+				<td>A10:2021</td>
+				<td>Low</td>
+				<td>Validate all input within the tool to ensure that it meets the business and technical requirements (OWASP, 2022).<br><br>Validate incoming IP addresses. Ensure 
+				all addresses are either IP V4 or V6.<br><br>Ensure all data comes from a valid domain name.<br><br>Disallow entry of complete URLs by the user.</td>
+			</tr>
+			<tr>
+				<td>A07:2021</td>
+				<td>Low</td>
+				<td>Update default username (Bradley, 2017).<br><br>Update default password to include lower case letters.</td>
+			</tr>
+			<tr>
+				<td>A05:2021</td>
+				<td>Low</td>
+				<td>Use of the domain mail ID to send emails.<br><br>Train staff to understand the risk of internal phishing, pretexting attacks.<br><br>Implement spoofing 
+				protection mechanisms such as SPF or DMARC (Dmarcly, 2022).</td>
+			</tr>
+		</table>
+		</p>
+		<p><b>Conclusion</b>
+		<br><br>
+		The list of recommendations in Table 3 address a variety of currently relevant web application vulnerabilities; it would counter the most common weaknesses and 
+		strengthen the security of the website. However, readers should be aware that no web application can ever be 100% secure (Vigliarolo, 2018), and this list is by no 
+		means exhaustive. There may be additional vulnerabilities that could not be detected due to missing accesses to the admin page, code and database or where the detection 
+		has been prevented by the A2 Web Hosting security controls.
+		<br><br>
+		To further strengthen an e-commerce website, ISO 21001 recommends performing vulnerability scans on a quarterly basis for early threat detection (Stankovic, 2021). 
+		The vulnerability scanning framework could also be expanded to look for other common vulnerabilities such as those listed in the National Vulnerability Database (NVD) 
+		(Sane, 2020) in addition to the OWASP Top 10. The use of penetration testing should also be considered to detect threats not picked up by the automated scanners.
+		<br><br>
+		It is also suggested that anyone handling the website should receive Cyber Security training whilst the organisation should consider 
+		implementing a Cyber Security framework to streamline the approach to security threats (Nidecki, 2022).</p>
+		<p><b>References</b>
+		<br><br>
+		A2hosting (2022) Web Hosting Comparison 2022 | Compare BEST Web Host. Available at: https://www.a2hosting.com/web-hosting/compare [Accessed 10 May 2022].
+		<br><br>
+		Ariyani, S. and Wijaya, A. (2017). ATCS System Security Audit Using Nessus. Journal of Information Engineering and Applications 7(3) 24-27.
+		<br><br>
+		Arun, A., Bijimol, T., K. (2021) A Research Work on Information Gathering Tools. Proceedings of the National Conference on Emerging Computer Applications (NCECA)-2021 3(1): 118-120.
+		<br><br>
+		AuhorityRush (2018) Softaculous Wordpress Install & The Security Risks You NEED to Know About. Available from: https://www.warriorforum.com/website-design/1323924-softaculous-wordpress-installs-security-risks-you-need-know-about.html [Accessed 8 May 2022].
+		<br><br>
+		Bintahin, M. (2021) What is Nikto Tool in Kali and how to use it? Available from: https://cyber-today.com/what-is-nikto-tool-in-kali-and-how-to-use-it/ [Accessed 11 May 2022].
+		<br><br>
+		Blazquez, D. (2020) SSRF: What is Server Side Request Forgery? Available from: https://hdivsecurity.com/bornsecure/ssrf-what-is-server-side-request-forgery/ [Accessed 19 May 2022].
+		<br><br>
+		Bradley, T. (2017) Change All Default Passwords and Usernames. Available from: https://techspective.net/2017/10/18/change-default-passwords-usernames/ [Accessed 19 May 2022].
+		<br><br>
+		Cloutier, R. (2021) Data at rest vs Data in transit and how to protect them. Available from: https://securitystudio.com/data-at-rest-vs-data-in-transit/#:~:text=1%20To%20protect%20data%20in%20transit%2C%20companies%20should,all%20data%2C%20no%20matter%20where%20it%20resides.%20  [Accessed 13 May 2022].
+		<br><br>
+		Čisar, P., Cisar, S.M. and Fürstner, I. (2018). Security Assessment with Kali Linux. Bánki Közlemények (Bánki Reports), [online] 1(1), pp.49–52. Available at: http://bk.bgk.uni-obuda.hu/index.php/BK/article/view/24.
+		<br><br>
+		Dalke, L. (2014) Tarpits. A Nexpose Killer? Available at: https://www.rapid7.com/blog/post/2014/03/21/tarpits-a-nexpose-killer/ [Accessed 11 May 2022].
+		<br><br>
+		FancyBox (2022) FancyBox V2 has been discontinued. Available from: https://fancyapps.com/fancybox/ [Accessed 8 May 2022].
+		<br><br>
+		Fredj, O.B., Cheikhrouhou, O., Krichen, M., Hamam, H., Derhab, A. (2021). An OWASP Top Ten Driven Survey on Web Application Protection Methods. In: Garcia-Alfaro, J., Leneutre, J., 
+		<br><br>
+		Forcepoint (2022) What is defence in depth? Available from: What is Defense in Depth? Defined, Explained, Explored | Forcepoint [Accessed 13 May 2022].
+		<br><br>
+		GeeksforGeeks (2022) See-SURF – Python Based Scanner To Find Potential SSRF Parameters. Available from: https://www.geeksforgeeks.org/see-surf-python-based-scanner-to-find-potential-ssrf-parameters/ [Accessed 8 May 2022].
+		<br><br>
+		Gov.uk (2021) Protect domains that do not send email. Available from: https://www.gov.uk/guidance/protect-domains-that-dont-send-email [Accessed 19 May 2022].
+		<br><br>
+		Hayes, A. (2020) A guide to easy and effective threat modelling. Available from: https://securityintelligence.com/posts/a-guide-to-easy-and-effective-threat-modeling/ [Accessed 13 May 2022].
+		<br><br>
+		HostedScan (2022) Scan types. Available from: https://hostedscan.com/scan-types [Accessed 19 May 2022].
+		<br><br>
+		Jenkins, B. (2022) Put OWASP Top 10 Proactive controls to work. Available from: https://techbeacon.com/security/put-owasp-top-10-proactive-controls-work [Accessed 13 May 2022].
+		<br><br>
+		Kali (2022) Packages and binaries: sslscan. Available from: https://www.kali.org/tools/sslscan/ [Accessed 11 May 2022].
+		<br><br>
+		Kim, J. (2020) Burp Suite: Automating Web Vulnerability Scanning. Available at: https://www.proquest.com/openview/cdef16944ee151614dd38c0e09b24c13/1?pq-origsite=gscholar&cbl=18750&diss=y.
+		<br><br>
+		Naas, J. (2020) What the Angularjs End-Of-Life Means for You. Available from: https://www.inmotionhosting.com/support/edu/openstack/what-the-angularjs-end-of-life-means-for-you/ [Accessed 8 May 2022].
+		<br><br>
+		Nidecki, T., A. (2022) 7 web application security best practices. Available from: https://www.acunetix.com/blog/web-security-zone/7-web-application-security-best-practices/ [Accessed 2 May 2022]. 
+		<br><br>
+		NCSC (2021) 10 steps to cyber security, guidance on how organisations can protect themselves in cyber space. Available from: https://www.ncsc.gov.uk/collection/10-steps/logging-and-monitoring [Accessed 16 May 2022].
+		<br><br>
+		Nugroho, P.A. and Steven, H. (2021). Measurement of Unsupported Applications used in Indonesia Popular Websites. Jurnal Ilmiah Teknik Elektro Komputer dan Informatika, [online] 7(1), p.18. doi:10.26555/jiteki.v7i1.18512.
+		<br><br>
+		Majumedr, S., Paramsivam, S. (2022) HTML SQL injection check. Available from: https://docs.citrix.com/en-us/citrix-adc/current-release/application-firewall/top-level-protections/html-sql-injection-check.html [Accessed 13 May 2022].
+		<br><br>
+		Ric Messier (2018). Learning Kali Linux : security testing, penetration testing, and ethical hacking. Sebastopol, Ca: O’reilly Media, Inc.
+		<br><br>
+		Obbayi, L. (2019) A brief introduction to Nessus vulnerability scanner. Available from : https://resources.infosecinstitute.com/topic/a-brief-introduction-to-the-nessus-vulnerability-scanner/ [Accessed 13 May 2022].
+		<br><br>
+		OWASP (2012) HTTP Strict Transport Security - OWASP Cheat Sheet Series. [online] Available at: https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html [Accessed 9 May 2022].
+		<br><br>
+		OWASP (2021) Welcome to the OWASP Top 10 - 2021. Available from: https://owasp.org/Top10/ [Accessed 8 May 2022].
+		<br><br>
+		OWASP (2022) Server-Side Request Forgery Prevention Cheat Sheet. Available from: https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html [Accessed 8 May 2022].
+		<br><br>
+		OWASP Cheat Sheet Series (2022) Cross-Site Request Forgery Prevention Cheat Sheet. Available from: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html [Accessed 20 May 2022].
+		<br><br>
+		Pentest Tools (2022) Website vulnerability scanning. Available from: https://pentest-tools.com/website-vulnerability-scanning/website-scanner [Accessed 13 May 2022].
+		<br><br>
+		Pentest Tools (2022) SQL Injection Scanner. Available from: https://pentest-tools.com/website-vulnerability-scanning/sql-injection-scanner-online [Accessed 20 May 2022].
+		<br><br>
+		PortSwigger (2022) Using Burp's "Request in Browser" Function to Test for Access Control Issues. Available from: https://portswigger.net/support/using-burp-suites-request-in-browser-function-to-test-for-access-control-issues [Accessed 7 May 2022].
+		<br><br>
+		Redscan Team (2020) What is OWASP penetration testing. Available from: https://www.redscan.com/news/what-is-owasp-penetration-testing/ [Accessed 13 May 2022]
+		<br><br>
+		Sandhya, S., Purkayastha, S., Joshua, E. and Deep, A. (2017). Assessment of website security by penetration testing using Wireshark. [online] IEEE Xplore. doi:10.1109/ICACCS.2017.8014711.
+		<br><br>
+		Sane, P. (2020). Is the OWASP Top 10 List Comprehensive Enough for Writing Secure Code? Proceedings of the 2020 International Conference on Big Data in Management. 
+		<br><br>
+		ScanRepeat (2022) Absence of Anti-CSRF Tokens. Available from: https://scanrepeat.com/web-security-knowledge-base/absence-of-anti-csrf-tokens [Accessed 7 May 2022].
+		<br><br>
+		Snyk (2022) jquery@3.4.1 vulnerabilities. Available from: https://snyk.io/vuln/npm:jquery@3.4.1 [Accessed 22 May 2022].
+		<br><br>
+		SSL (2021) SSL/TLS Best Practices for 2021. Available at: https://www.ssl.com/guide/ssl-best-practices [Accessed 9 May 2022].
+		<br><br>
+		Stahnke, M. (2006) Legacy Protocols: Why Replace Telnet, FTP, rsh, rcp, and rlogin with SSH? (n.d.). Pro OpenSSH, pp.3–15. 
+		<br><br>
+		Stankovic, S. (2021) How Often Should You Perform A Network Vulnerability Scan? Available from: https://purplesec.us/how-often-perform-vulnerability-scan/ [Accessed 12 May 2022].
+		<br><br>
+		University of Essex Online (2022) Lecturecast: History & Definitions. Network and Information Security Management March 2022 A. University of Essex Online.
+		<br><br>
+		Vigliarolo, B. (2018) Report: 100% of web apps have at least one security vulnerability. Available from: https://www.ptsecurity.com/ww-en/about/news/banking-and-finance-were-the-most-vulnerable-web-applications-in-2017/ [Accessed 12 May 2022].
+		<br><br>
+		Wappalyzer (2022) Find out what websites are built with. Available from: https://www.wappalyzer.com/lookup/ [Accessed 10 May 2022].
+		<br><br>
+		Zhang, H., Anilkumar, A., Fredrikson, M. and Agarwal, Y. (2021) Capture: Centralized Library Management for Heterogeneous IoT Devices. Proceedings of the 30th USENIX Security Symposium. Available at: https://www.semanticscholar.org/paper/Capture%3A-Centralized-Library-Management-for-IoT-Zhang-Anilkumar/2724b2b23fb1b1200f914cd37b82dc020c957a97 [Accessed 21 May 2022].
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Meeting minutes 22nd of May 2022</b></button>
