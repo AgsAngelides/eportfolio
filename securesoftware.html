@@ -142,7 +142,28 @@
 		
 		<button type="button" class="collapsible"><b>&#9672; Collaborative discussion 1: UML flowchart</b></button>
 		<div class="content">
-		<p>TBC</p>
+		<p>For this discussion post I have chosen to analyse a vulnerability from the OWASP 2017 Top 10 Injection category (Mitre, 2017) – OS Command Injection.</p>
+		<p>The OS Command Injection is a vulnerability concerned with an unauthorised person being allowed to execute commands directly on the operating system. This is usually 
+		done via a third-party system, such as a web application, which uses certain commands to access the OS (Mitre, 2022).</p>
+		<p>To visualise the actions taken by the development team and the attacker that could have led to an attack abusing this weakness, the Unified Modelling Language (UML) 
+		Sequence diagram has been chosen. This type of diagram captures the process flow and interactions between different interacting parties (Seidl, 2015) and thus it was felt 
+		that it was the most suitable UML diagram in this instance.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 1/OS Command injection sequence diagram.png"></p>
+		<p>The sequence presented in the Figure 1 reviews an OS Command Injection vulnerability example introduced by the usage of the Python OS module and, specifically, its 
+		os.system() method. The web application uses this method to fetch the user’s email address entered in the front end, pass it to the OS and then to trigger an email to 
+		the user.</p>
+		<p>Using the os.system() method in Python on a web application may provide an attacker with an opportunity to inject malicious payload which could execute code remotely 
+		(Turcsányi, 2022) on the webserver or download internal configuration files, as demonstrated in the example.</p>
+		<p><b>References</b>
+		<br>
+		Mitre (2017) Weaknesses in OWASP Top Ten. Available from: https://cwe.mitre.org/data/definitions/1026.html [Accessed 16 June 2022].
+		<br>
+		Mitre (2022) CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'). Available from: https://cwe.mitre.org/data/definitions/78.html [Accessed 16 June 2022].
+		<br>
+		Seidl, M. (2015). UML @ classroom : an introduction to object-oriented modeling. Cham: Springer.
+		<br>
+		Turcsányi, G. (2022) Python best practices and common security issues. Available from: https://avatao.com/blog-common-issues-and-best-practices-in-python/ [Accessed 16 June 2022].
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
