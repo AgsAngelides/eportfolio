@@ -218,7 +218,108 @@
 		
 		<button type="button" class="collapsible"><b>&#9672; Seminar preparation</b></button>
 		<div class="content">
-		<p>TBC</p>
+		<p>For this seminar, we have been asked to read an article by Sharma & Bawa (2020) on secure Agile development and to build  table with Scrum development phases and 
+		applicable security activities that could be undertaken for each. Please find the table below.</p>
+		<table>
+			<tr>
+				<th>Scrum Agile software development stages</th>
+				<th>secure software development processes to apply</th>
+			</tr>
+			<tr>
+				<td>Concept</td>
+				<td>Prepare a role matrix to identify all user types and authorisation level for each (With the help of CLASP and Microsoft’s SDL).
+					<br>
+					Define the security policy to be followed (i.e. if it should adhere to the client’s or internal policy) and any governing regulations to consider (With the help of CLASP, SDL, CT, and CC.)
+					<br>
+					List other systems the new software will interact with and whether they are trusted/not trusted (With the help of CLASP).
+					<br>
+					Define the operating environment assumptions (With the help of CLASP).
+					<br>
+					Define any 3rd party systems the software/application will interact with and whether they are trustworthy or not (With the help of CLASP).
+				</td>
+			</tr>
+			<tr>
+				<td>Inception</td>
+				<td>Assign a security specialist to the project, if one is available.
+					<br>
+					Perform risk/vulnerability analysis. Provide details of how each will be resolved (With the help of CT and CC).
+					<br>
+					Define the specific security functionality required to meet the security policies and regulations requirements.
+					<br>
+					Decide on any secure coding rules, practices that the teams should follow during the iterations (With the help of SDL).
+					<br>
+					Define each security requirement acceptance criteria.
+					<br>
+					Define reference security architecture (AA)
+				</td>
+			</tr>
+			<tr>
+				<td>Iteration</td>
+				<td>Re-evaluate the list of vulnerabilities as there may be new introduced by the development approach or new identified due to the changes in the requirements.
+					<br>
+					Tag previously identified security vulnerabilities to relevant sprints for resolution.
+					<br>
+					Evaluate the security mitigations implemented against the previously agreed acceptance criteria.
+					<br>
+					Employ pair programming practices were possible to ensure the code is written by following the secure software development practices.
+				</td>
+			</tr>
+			<tr>
+				<td>Release</td>
+				<td>Test for all previously identified security vulnerabilities/risks.
+					<br>
+					If any new security bugs/vulnerabilities are discovered, address them before the deployment.
+					<br>
+					Retest to confirm remediation.
+					<br>
+					Perform pen testing on the application and network where it will be implemented (if possible) (With the help of CT).
+					<br>
+					Document the security architecture.
+					<br>
+					Prepare a security incident plan: a checklist to follow when a security incident occurs.
+					<br>
+					Prepare the security improvement plan.
+				</td>
+			</tr>
+			<tr>
+				<td>Maintenance</td>
+				<td>Patch all the systems promptly.
+					<br>
+					Implement any security improvements where feasible.
+					<br>
+					Offer training to users, including security aspects to consider.
+					<br>
+					Review project, resolve any newly identified bugs.
+					<br>
+					New iterations taking place can turn existing projects/products into upgraded versions of it including additional features.
+					<br>
+					Pentesting at least annually.
+				</td>
+			</tr>
+			<tr>
+				<td>Retirement</td>
+				<td>Ensure the data is disposed of or stored in a way that meets the regulatory requirement, e.g. consider storage security, authorisation to access the data (Tolson, 2016), etc.
+					<br>
+					Cut off any hardware or networking resources.
+					<br>
+					Migrating users to another application will occur in case of a replacement and security considerations relevant should be addressed in case of this approach.
+				</td>
+			</tr>
+		</table>
+		<p>Various Software Development processes used in the table above are described below:<br>
+			<ul>
+				<li><b>Microsoft’s Secure Development Lifecycle (SDL):</b> increases reliability and reduces maintenance cost.</li>
+				<li><b>Comprehensive Lightweight Application Security Process (CLASP):</b> Enhances Security.</li>
+				<li><b>Cigital Touchpoints (CT):</b> improves security and quality of product.</li>
+				<li><b>Common Criteria (CC):</b> allows the user of the computer system to specify security assurance and functional requirements.</li>
+			</ul>
+		</p>		
+		<p><b>References:</b>
+		<br>
+		Sharma, A. & Bawa, R. K. (2020) Identification and Integration of Security Activities for Secure Agile Development. International Journal of Information Technology.
+		<br>
+		Tolson, B. (2016) Application Retirement: What about the Data? Available from: https://www.archive360.com/blog/application-retirement-what-about-the-data [Accessed 18 June 2022].
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Blog post</b></button>
