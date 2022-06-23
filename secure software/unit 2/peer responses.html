@@ -1,0 +1,29 @@
+<p><b>Peer response from Kevin Peuhkurinen on my Initial post:</b>
+<blockquote><cite>
+	<p>Hi Ags. I thought that your diagram was very informative. I do not think that you actually needed the developer agent since they really are not an integral part of the 
+	attack, but that seems like a minor point.</p>
+	<p>The one area I did have difficulty understanding was the first action of the attacker. For an OS command injection attack to work, the threat agent needs to provide a fully 
+	formed, executable command (Portswigger.net, 2022). In your diagram, the attack commences when the attacker "enters /etc/passwd". However, "/etc/passwd" is not an executable 
+	command and would just return an error. Instead, the attacker needs to enter a command just as "cat /etc/passwd" to display the contents of the file /etc/passwd.</p>
+	<p>Beyond these points, I think your diagram is excellent.</p>
+	<p><b>References</b>
+	<br>
+	Portswigger.net. (2022). What is OS command injection, and how to prevent it? | Web Security Academy. [online] Available at: https://portswigger.net/web-security/os-command-injection#:~:text=OS%20command%20injection%20(also%20known,application%20and%20all%20its%20data. [Accessed 23 Jun. 2022].
+	</p>
+</cite></blockquote>
+</p>
+<p><b>My response to Kevin's post:</b>
+<blockquote><cite>
+	<p>Hi Kevin,
+	<br><br>
+	thank you for your post and for the pointer provided. I believe I was potentially unclear in my diagram how the /etc/passwd can be used to obtain the information the hacker 
+	is not supposed to have.</p>
+	<p>The command does not need to be executable to reveal the files, at least, that is my understanding. If, for example, you have a program that you run on a command line that 
+	accepts user's input and that program in the back end uses os.system() Python method, the os.system() method parses the string as shell command and executes it (Kwong, 2014). 
+	So whilst the /etc/password is not executable on its own, the incorrectly implemented os.system() method turns it into one. This also applies to web applications which use the 
+	same method in their code base.</p>
+	<p><b>References</b>
+	<br>
+	Kwong, L. (2014) How to execute shell commands properly in Python. Available from: https://levelup.gitconnected.com/how-to-execute-shell-commands-properly-in-python-5b90c1a9213f [Accessed 23 June 2022].</p>
+</cite></blockquote>
+</p>
