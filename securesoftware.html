@@ -410,7 +410,40 @@
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 5</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>TBC</p>
+	<p>In the Unit 3 we have looked into the various programming languages and their history, programming paradigms, methods, security issues related to poor programming practices. 
+	We have investigated the language concepts using Python as an example and looked into the best practices and methods to be used in making the code more secure. We have been 
+	introduced to Linters and asked to practice using it on the Codio environment.</p>
+	
+		<button type="button" class="collapsible"><b>&#9672; Team meeting</b></button>
+		<div class="content">
+		<p>TBC</p>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Coding activity</b></button>
+		<div class="content">
+		<p>In this unit we have been given a quick coding practice. We have been asked to run a code in C programing language which doesn't validate user's input and thus presents 
+		a buffer overflow error if the input exceeds allowed length, and then asked to run a similar code in Python, which also triggers a buffer overflow error, just differently. 
+		Then, asked to use Pylint linter in testing the Python code and analysing the results.</p>
+		<p>The screenshots below presents what the Python code looked like when Pylint library was called and executed on the file containing the Python code as well as what the 
+		scan results looked like.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 3/python overflow.PNG">
+		<img class="img-responsive" alt="" src="./secure software/unit 3/pylint scan.PNG">
+		<p>I then used the errors provided by Pylint and looked them up in the guidance documentation available for this library and I was able to resolve the errors; please see the 
+		screenshot below of the updated code (the code file name also had to be updated to use lower case letters to adhere to Python's naming convention).</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 3/correctly written code.PNG">
+		<p>Interesting point here is that Pylint has made sure that the code meets the Python language standards, however, the buffer overflow issue created by range of 14 exceeding the 
+		array range of 10 has not been resolved. So the code still has security issues which can be picked up by the users testing boundaries and fixed by visual code inspection.</p>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Team discussion</b></button>
+		<div class="content">
+		<p>TBC</p>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Design document and tutor's feedback</b></button>
+		<div class="content">
+		<p>TBC</p>
+		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
