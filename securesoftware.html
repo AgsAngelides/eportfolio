@@ -620,7 +620,32 @@
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 4</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>TBC</p>
+	<p>In the unit 4 we have focussed on developing the software testing plans and understanding more about the industry software testing standards. We looked at the ways to automate 
+		testing and various techniques available applicable to each Software development lifecycle stage. We have also looked at data encryption techniques and distributed 
+		architecture.</p>
+		
+		<button type="button" class="collapsible"><b>&#9672; Seminar preparation - file encryption</b></button>
+		<div class="content">
+		<p>For the Unit 4 seminar preparation I wrote a program which takes a .csv file and encrypts it using the Python cryptography module, the symmetric Fernet encryption method. The program can be seen below.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit4/program.png">
+		<p>I chose to use cryptography module and Fernet symmetric encryption because (Lake, 2022):
+			<ul>
+				<li>The cryptographic primitives are readily available by using Fernet, which means that you don’t have to work out the algorithms yourself, which could result in an incorrect implementation and insecure data store or data loss (if it cannot be un-encrypted).</li>
+				<li>It is a well maintained Python library managed by the Python Cryptographic Authority.</li>
+				<li>Fernet’s cryptographic primitives include HMAC with SHA-256 and 128-bit AES (advanced encryption standards) in CBC mode.</li>
+				<li>The user can verify the fernet token before decrypting the data to ensure the data authenticity.</li>
+			</ul>
+		</p>
+		<p>The symmetric cryptography provided by the Python cryptography module, Fernet encryption does meet the GDPR requirements. The GDPR says that the person must not be able to view the data without a key (GDPR, 2022), so as long as the symmetric key is stored securely, the GDPR regulations would be met. Also, the primitives used by Fernet such as AES and HMAC are FIPS 140-2 and FIPS 197 compliant, which is one of the ico’s requirements in the UK (ico, 2022).</p>
+		<p><b>References</b>
+		<br>
+		GDPR (2022) Encryption. Available from: https://gdpr-info.eu/issues/encryption/ [Accessed 3 July 2022].
+		<br>	
+		Ico (2022) Encryption. Available from: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/security/encryption/ [Accessed 3 July 2022].
+		<br>
+		Lake, J. (2022) What is fernet and when should you use it? Available from: https://www.comparitech.com/blog/information-security/what-is-fernet/ [Accessed 3 July 2022].
+		</p>
+		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
