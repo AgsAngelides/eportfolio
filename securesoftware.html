@@ -646,6 +646,102 @@
 		Lake, J. (2022) What is fernet and when should you use it? Available from: https://www.comparitech.com/blog/information-security/what-is-fernet/ [Accessed 3 July 2022].
 		</p>
 		</div>
+
+		<button type="button" class="collapsible"><b>&#9672; Codio activities - pylint, flake8 and mccabe</b></button>
+		<div class="content">
+		<p><b>Question 1</b>
+		<br>
+			<ul>
+				<li>Run styleLint.py in Codio.</li>
+				<li>What happens when the code is run? Can you modify this code for a more favourable outcome? What amendments have you made to the code?</li>
+			</ul>
+		</p>
+		<p>The code is in the image below.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 1.png">
+		<br>
+		When you try to run it, you get an indentation error.
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 2.png">
+		<br>
+		To fix the indentation, the code should look like the one below. I.e. the function description, if and else statements must be indented once, whilst the return statements must be indented twice.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 3.png">
+		</p>
+		<p><b>Question 2</b>
+		<br>
+			<ul>
+				<li>pip install pylint</li>
+				<li>Run pylint on pylintTest.py</li>
+				<li>Review each of the code errors returned. Can you correct each of the errors identified by pylint?</li>
+				<li>Before correcting the code errors, save the pylintTest.py file with a new name (it will be needed again in the next question).</li>
+			</ul>
+		</p>
+		<p>The code in pylintTest.py file before the corrections looked like this.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 4.png">
+		<br>
+		Then I ran the pylint on this file, and got the following error.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 5.png">
+		<br>
+		I then corrected the code by adding the brackets around the encode in print statement and when I ran pylint, I got a lot more new errors.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 6.png">
+		<br>
+		I then corrected the code again; the corrected  code can be seen below.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 7.png">
+		</p>
+		<p><b>Question 3</b>
+		<br>
+			<ul>
+				<li>pip install flake8</li>
+				<li>Run flake8 on pylintTest.py</li>
+				<li>Review the errors returned. In what way does this error message differ from the error message returned by pylint?</li>
+				<li>Run flake8 on metricTest.py. Can you correct each of the errors returned by flake8? What amendments have you made to the code?</li>
+			</ul>
+		</p>
+		<p>I ran the flake8 on the pylint_test.py file and received the following error messages.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 8.png">
+		<br>
+		Flake8 appears to have picked up some white space formatting errors and some ambiguous names, like a single letter being used.
+		<br>
+		I corrected the code and the code now looks like this.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 9.png">
+		<br>
+		I then tried running flake8 on the metricTest.py file, but the file received a syntax error straight away and the flake8 linter would not run anymore. It 
+		appears that the metric test file was copied over from somewhere, so every line was numbered, which has obviously triggered the syntax error. I fixed all 
+		the obvious errors, and then fixed all the errors flagged up by flake8. The image of the corrected code can be seen below. The amendments included:
+			<ul>
+				<li>Trailing spaces</li>
+				<li>Missing line breaks</li>
+				<li>Un-indented code</li>
+				<li>Missing spaces around operators</li>
+				<li>Too long lines</li>
+			</ul>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 10.png">
+		</p>
+		<p><b>Question 4</b>
+		<br>
+		I was unable to complete the question 4 using the mccabe, since the program would not run in Codio or other compillers.
+		</p>
+		<p><b>Question 5</b>
+		<br>
+		The Cyclomatic Complexity is commonly considered in modules on testing the validity of code design today. However, in your opinion, should it be? Does it remain 
+		relevant today? Specific to the focus of this module, is it relevant in our quest to develop secure software? Justify all opinions which support your argument and 
+		share your responses with your team.</p>
+		<p>The CC metric is still relevant as it provides an indication on the code structure, whether it will have a high maintainability, high test effort. It can be used to predict the number of test cases required for any given piece of code (Ebert & Cain, 2016).</p>
+		<p>The higher the CC metric, the more difficult it will be to read and understand the code, meaning that it could not be tested to its fullest, which could in turn lead to missed bugs in the code. Also, as the complexity of the code increases, the probability of new error introduction increases to (Jader & Mahmood, 2018).</p>
+		<p>However, as the authors of the Cyclomatic Complexity paper had pointed out, this is more often considered an academic metric, rather than something that is used in practice. Whilst the metric is relevant, not many know about it, and even less people know how to use it or how to interpret the results. On top of that, many software development specialists do not have the time to learn how to produce metrics like that, because the time spent learning needs to be spent on subjects that help you to stay relevant in the job market (Ebert & Cain, 2016).</p>
+		<p><b>References</b>
+		<br>
+		Abd Jader, M. N., & Mahmood, R. Z. (2018) CALCULATING MCCABE'S CYCLOMATIC COMPLEXITY METRIC AND ITS EFFECT ON THE QUALITY ASPECTS OF SOFTWARE.
+		<br>
+		Ebert, C. and Cain, J. (2016). Cyclomatic Complexity. IEEE Software, 33(6), pp.27–29.
+		</p>
+		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
