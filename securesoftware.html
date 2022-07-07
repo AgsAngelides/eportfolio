@@ -787,6 +787,56 @@
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
 	<p>TBC</p>
+	
+		<button type="button" class="collapsible"><b>&#9672; Codio activity - restful API with Flask</b></button>
+		<div class="content">
+		<p><b>Question 1</b>
+		<br>
+		Run the API.py code. Take a screenshot of the terminal output. What command did you use to run the code?
+		</p>
+		<p>
+		I saved the script provide on my machine, instead of using the Jupiter Notebooks and ran it on my terminal using python3 app.py command (I renamed the file).
+		</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/image0.png">
+		<p>The command line generated the rest API and ran it.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 1.png">
+		<p>It turned out, I didn’t update enter my username, so that the url would be in format http://127.0.0.1:5000/user/Ags.</p>
+		<p>I updated the code, and opened the page again, this time I was presented with a type error.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 2.png">
+		<p>It turned out that the code on the university website was missing the user name, so I needed to update second from the bottom code line to api.add_resource(User, "/user/<string:name>") to make it work.</p>
+		<p>Then I got the following page if I tried to open the page for my own name.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 3.png">
+		<p><b>Question 2</b>
+		<br>
+		Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Ann 
+		<br>
+		What happens when this command is run, and why?
+		</p>
+		<p>I was unable to run the w3m command on my windows machine to browse the webpage on the computer, however, I was able to start the API and load it in the browser.</p>
+		<p>The browser loaded the details of the user.</p>
+		<p>This is because we fetched the user’s name and that user existed with these values in our rest API.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 4.png">
+		<p><b>Question 3</b>
+		<br>
+		Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Adam 
+		<br>
+		What happens when this command is run, and why?
+		</p>
+		<p>When trying to fetch Adam, I get no results because Adam is not configured as one of the users in our rest API.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 5.png">
+		<p><b>Question 4</b>
+		<br>
+		What capability is achieved by the flask library?
+		</p>
+		<p>Flask provides simplicity and scalability, it is known for being more lightweight when compared to Django. All the code is kept within the ‘core’, hence, it’s also known as a microframework (Janetakis, 2018). It has an extensive documentation.</p>
+		<p>All this allows a simple implementation of an API, which allows the information to be accessible and manipulated via an internet (Smyth, 2018).</p>
+		<p><b>References</b>
+		<br>
+		Janetakis, N. (2018) Flask Libraries for Building Awesome Real World RESTful APIs. [online] Nick Janetakis. Available at: https://nickjanetakis.com/blog/flask-libraries-for-building-awesome-real-world-restful-apis [Accessed 7 Jul. 2022].
+		<br>
+		Smyth, P. (2018). Creating Web APIs with Python and Flask. The Programming Historian, (7).
+		</p>
+		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
