@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -12,9 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
-
 <style>
-
 	.codePadding {
 		padding-left: 0px
 	}
@@ -31,11 +28,9 @@
 		outline: none;
 		font-size: 15px;
 	}
-
 	.active, .collapsible:hover {
 		background-color: #f7f5f5;
 	}
-
 	.content {
 		padding: 0 18px;
 		display: none;
@@ -56,22 +51,16 @@
 	  border-collapse: collapse;
 	  width: 100%;
 	}
-
 	td, th {
 	  border: 1px solid #dddddd;
 	  text-align: left;
 	  padding: 8px;
 	}
-
 	tr:nth-child(even) {
 	  background-color: #dddddd;
 	}
 </style>
-
-
-
 <body>
-
 <header class="">
   <div class="navbar navbar-default visible-xs">
     <button type="button" class="navbar-toggle collapsed">
@@ -82,7 +71,6 @@
     </button>
     <a href="./index.html" class="navbar-brand">Mashup Template</a>
   </div>
-
   <nav class="sidebar" style="background-color: #eee;">
     <div class="navbar-collapse" id="navbar-collapse">
       <div class="site-header hidden-xs">
@@ -96,119 +84,285 @@
         <li><a href="./about.html" title="">About</a></li>
 		<li><a href="./index.html" title="">List of modules</a></li>
         <li><a href="./contact.html" title="">Contact</a></li>
-
       </ul>
     </div> 
   </nav>
 </header>
 <main class="" id="main-collapse">
-
-
 <div class="row">
   <div class="col-xs-12 col-md-8">
-
     <div class="section-container-spacer">
-        <h1>Information Risk Managament</h1>
+        <h1>Secure Software Development</h1>
 		<br>
 		<h3>Introduction to the module</h3>
-		<p>This module aims to introduce the students to the Principles of the Information Risk Management, its assessment and mitigation techniques. In summary, the purpose of this module 
-		is to provide:
+        <p>The Secure Software Development modules aims to provide a detailed overview of programming languages and risks associated to those, from the perspectives of design and architecture approaches, programming paradigms. It will cover the subject of software testing and it will look into the impact the Operating Systems and Libraries have on software development. In addition to the programming languages, topics such as the distributed systems, APIs, future trends in secure software development, etc. will also be addressed.
+		<br><br>
+		In particular, this module will:
 		<ul>
-			<li>A basic understanding of the Information Risk Management principles.</li>
-			<li>An understanding of the relationships between the Information Risk management and the Software Development Life Cycle (SDLC).</li>
-			<li>An understanding of the residual risks in the SDLC.</li>
-			<li>An introduction into the current and future chalanges, limitations and opportunities.</li>
+			<li>Introduce the concept of abstraction of programming.</li>
+			<li>Develop an understand of the basic principles of secure software development methodologies.</li>
+			<li>Explore how to perform analysis, program design, software construction and testing required for secure software development.</li>
+			<li>Introduce the basic concepts of software architecture and Software Development Life Cycles such as Agile and TOGAF. </li>
+			<li>Further develop team working skills.</li>
+			<li>Provide an opportunity to reflect on personal development.</li>
 		</ul>
 		</p>
     </div>
-
 	
 	<h3> Overview of the work completed</h3>
 	
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 1</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>The aim of the unit 1 is to review the common definitions of the Information Risk Management and other relared terminologies, discuss related Security Management Concepts and the 
-	Risk Management Process (the risk assessment, qualifying and mitigation). We have also reviewed various approaches of quantifying and qualifying the risk.</p>
+	<p>The Unit 1 focusses on the review of various software developing methodologies. In this unit we have reviewed the Waterfall and Agile as well as Secure Agile software 
+	development approaches as well as looked into the Unified Modelling Language (UML) and how this could support software development. During this week we have also touched upon the 
+	subject of various software development standards applicable.</p>
 		
-		<button type="button" class="collapsible"><b>&#9672; Team contract and first team meeting</b></button>
+		<button type="button" class="collapsible"><b>&#9672; Team contract</b></button>
 		<div class="content">
-		<img class="img-responsive" alt="" src="./Information risk management/unit 1/Information risk management team contract.png">
+		<p>Please note, the team contract signatures were excluded for privacy conciderations.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 1/Team contract.png">
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Collaborative discussion 1: UML flowchart</b></button>
+		<div class="content">
+		<p>For this discussion post I have chosen to analyse a vulnerability from the OWASP 2017 Top 10 Injection category (Mitre, 2017) – OS Command Injection.</p>
+		<p>The OS Command Injection is a vulnerability concerned with an unauthorised person being allowed to execute commands directly on the operating system. This is usually 
+		done via a third-party system, such as a web application, which uses certain commands to access the OS (Mitre, 2022).</p>
+		<p>To visualise the actions taken by the development team and the attacker that could have led to an attack abusing this weakness, the Unified Modelling Language (UML) 
+		Sequence diagram has been chosen. This type of diagram captures the process flow and interactions between different interacting parties (Seidl, 2015) and thus it was felt 
+		that it was the most suitable UML diagram in this instance.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 1/OS Command injection sequence diagram.png"></p>
+		<p>The sequence presented in the Figure 1 reviews an OS Command Injection vulnerability example introduced by the usage of the Python OS module and, specifically, its 
+		os.system() method. The web application uses this method to fetch the user’s email address entered in the front end, pass it to the OS and then to trigger an email to 
+		the user.</p>
+		<p>Using the os.system() method in Python on a web application may provide an attacker with an opportunity to inject malicious payload which could execute code remotely 
+		(Turcsányi, 2022) on the webserver or download internal configuration files, as demonstrated in the example.</p>
+		<p><b>References</b>
+		<br>
+		Mitre (2017) Weaknesses in OWASP Top Ten. Available from: https://cwe.mitre.org/data/definitions/1026.html [Accessed 16 June 2022].
+		<br>
+		Mitre (2022) CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection'). Available from: https://cwe.mitre.org/data/definitions/78.html [Accessed 16 June 2022].
+		<br>
+		Seidl, M. (2015). UML @ classroom : an introduction to object-oriented modeling. Cham: Springer.
+		<br>
+		Turcsányi, G. (2022) Python best practices and common security issues. Available from: https://avatao.com/blog-common-issues-and-best-practices-in-python/ [Accessed 16 June 2022].
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
-		<p>The first week of the Information Risk Management module was about us getting introduced to our tutor, touching upon the upcoming assignments, starting to learn some basics 
-		on the Risk Management in terms of information security and to get to know our new teams.</p>
-		<p>The team allocation did not happen until much later in the week, which meant that we lost quite a bit of time in working out the logistics on how we are to communicated, 
-		everyone's availability, etc. The teams were also not assigned this time and we had to rather provide our own preference. Which can be good too, but also, it was the reason 
-		why the team assignment took so much time. I think it would have been better if we were assigned teams at the beginning of the week rather than having to wait for seminar 
-		to find out how the team assignment process will happen and then having to wait a few more days after that.</p>
-		<p>The reading in this unit included the first three chapers of the Sutton (2021) book on the Information Risk Management, the Hubbard book (2009) on the failure of risk management 
-		and the risk management guide produced by NIST (2002). I found the book by Hubbard to be quite controversial: I do not think I agree with his statements that non quantitative 
-		risk assessment methods used by the management teams of various companies is a terrible idea. Insurance, finance companies, etc. have a lot of pre-existing data which they 
-		are often very protective of which can be used in calculating the risk likelihood, impact, cost, etc. However, for many smaller or medium sized business this data does not 
-		exist. The risk management still needs to performed based on the best assumptions and so the low, medium, high qualifications to provide some value, in my opinion.</p>
-		<p>The document published by NIST was also very informative. The risk management guidance provided in the document was very clear and informative and could be easily followed 
-		by less experienced professionals who need to implement risk management systems. I think this guidance will also be useful when completing our team assignments.</p>
+		<p>During week 1 of the 'Secure software development' module we have been asked to complete a variety of reading, prepare a UML diagram on the assigned subject as well as 
+		to write and sign a team contract for the newly allocated team.</p>
+		<p>This week's reading material included an overview of the OWASP Top Ten (Mitre, 2017), the introduction into a new software development methodology called Secure Scrum (Pohl & Hof, 2015), 
+		ISO 27000 standards (ISO/IEC, 2018), software design patterns (Asghar et al, 2019) and an introduction into software development using Python as well as security considerations 
+		the developers must have when using this programming language (Pillai, 2017).</p>
+		<p>I enjoyed how the authors of the Secure Scrum paper managed to utilise a currently popular software development approach for security related issue development work. The paper 
+		not only discussed the theoretical benefits of such methodology, but also practical means of implementing it and provided some great examples to further explain their ideas.
+		<br>
+		I found this paper most relevant to my current role as the Project Manager/Business Analyst. Depending on the type of project, we may deliver some using the waterfall methodology and 
+		others using the Agile methodology. When using the Waterfall, I always make sure that in the project design phase we cover the security aspects. However, when using the Agile method 
+		I find that the security aspects are often missed during the many iterations or you start off with having them, but in the subsequent iterations you loose the sight of it. The suggestions 
+		made in the paper on using the Security tags to tag to the issues in the iteration which then link to the security vulnerabilities is a great way of not loosing the track of the security 
+		exposures and tracking them to completion along many sprints.</p>
+		<p>The other reading material was interesting too, however, some of it was a little less relevant to my current job, although, still informative. </p>
+		<p>The first module seminar we had this week was also very good and informative. The assignment requirements discussed by the tutor have cleared some things up for me. 
+			We have also been advised we would be assigned to the teams of 3 to 4 people in which we will conduct all future assignments. I have also requested the tutor 
+			to let us know if any seminar preparation must be done in teams going forward since it was not always clear in the previous module.</p>
+		<p>During the Unit 1 we have also been asked to prepare an initial discussion forum post on a chosen OWASP Top 10 vulnerability (Mitre, 2017). The post had to include a Unified 
+		Modelling Language (UML) diagram of our choice to best represent a chosen coding weakness and the steps that led to it occuring.<br>
+		I have chosen to use the UML Sequence diagram, because I felt that this type of the diagram was most suitable to represent the actions flowing from one system/actor to the other. 
+		The task was interesting since it made me think more of a particular vulnerability I chose from the list. It made me understand what coding practices and actions taken by the user 
+		could lead towards exploiting this vulnerability. </p>
+		<p>Lastly, in this unit we were assigned to our team and asked to create a team contract. It didn't take us long to get going, when compared to the previous 
+			module with team work, as I think most of us already knew how to approach the team work in the online learning environment. During this week we have 
+			also discussed the domain we wish to work on in our Unit 3 and 6 assignments as well as considered any other upcoming team tasks. A Google drive folder 
+			was created for storing all the team related work and team meeting availability was also discussed. The team was very responsive and keen to get started.</p>
 		<p><b>References</b>
+		<br><br>
+		Core Text: Pillai, A.B. (2017) Software Architecture with Python. Birmingham, UK. Packt Publishing Ltd.
 		<br>
-		Sutton, D. (2021) Information Risk Management. 2nd ed. Swindon, UK: BCS Learning & Development Limited.
+		Asghar, M. Z., Alam, K. A. & Javed, S. (2019) Software Design Patterns Recommendation : A Systematic Literature Review, 2019 International Conference on Frontiers of Information Technology.
 		<br>
-		Stoneburner, G., Goguen, A. & Feringa, A. (2002) SP 800-30: Risk Management Guide for Information Technology Systems.
+		Mitre (2017) Weaknesses in OWASP Top Ten.
 		<br>
-		Hubbard, D. (2009) The Failure of Risk Management: Why It's Broken and How to Fix It. 
+		Pohl, C. & Hof, H-J. (2015) Secure Scrum: Development of Secure Software with Scrum, in Proc. of the 9th International Conference on Emerging Security Information, Systems and Technologies.
+		<br>
+		ISO/IEC (2018) ISO/IEC Standard 27000 Section 3.
+		</p>
 		</div>
 	</div>
 	
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 2</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>The Unit 2 of the Information Risk Management module aims to review the Risk Management Process (RMP), review the different research methods (Qualitative vs Quantitative) and 
-	discuss how the user participation impacts the RMP.</p>
-	
-		<button type="button" class="collapsible"><b>&#9672; Collaborative Learning Discussion 1 - Initial post</b></button>
+	<p>The aim of the Unit 2 is to showcase how Agile development stages could be integrated with secure programming practices as well as to discuss the instances 
+		in which the software security can be problematic.</p>
+		
+		<button type="button" class="collapsible"><b>&#9672; Seminar preparation</b></button>
 		<div class="content">
-		<object width=100% height="400" data="./Information risk management/unit 2/Initial post.html"></object>
+		<p>For this seminar, we have been asked to read an article by Sharma & Bawa (2020) on secure Agile development and to build  table with Scrum development phases and 
+		applicable security activities that could be undertaken for each. Please find the table below.</p>
+		<table>
+			<tr>
+				<th>Scrum Agile software development stages</th>
+				<th>secure software development processes to apply</th>
+			</tr>
+			<tr>
+				<td>Concept</td>
+				<td>Prepare a role matrix to identify all user types and authorisation level for each (With the help of CLASP and Microsoft’s SDL).
+					<br>
+					Define the security policy to be followed (i.e. if it should adhere to the client’s or internal policy) and any governing regulations to consider (With the help of CLASP, SDL, CT, and CC.)
+					<br>
+					List other systems the new software will interact with and whether they are trusted/not trusted (With the help of CLASP).
+					<br>
+					Define the operating environment assumptions (With the help of CLASP).
+					<br>
+					Define any 3rd party systems the software/application will interact with and whether they are trustworthy or not (With the help of CLASP).
+				</td>
+			</tr>
+			<tr>
+				<td>Inception</td>
+				<td>Assign a security specialist to the project, if one is available.
+					<br>
+					Perform risk/vulnerability analysis. Provide details of how each will be resolved (With the help of CT and CC).
+					<br>
+					Define the specific security functionality required to meet the security policies and regulations requirements.
+					<br>
+					Decide on any secure coding rules, practices that the teams should follow during the iterations (With the help of SDL).
+					<br>
+					Define each security requirement acceptance criteria.
+					<br>
+					Define reference security architecture (AA)
+				</td>
+			</tr>
+			<tr>
+				<td>Iteration</td>
+				<td>Re-evaluate the list of vulnerabilities as there may be new introduced by the development approach or new identified due to the changes in the requirements.
+					<br>
+					Tag previously identified security vulnerabilities to relevant sprints for resolution.
+					<br>
+					Evaluate the security mitigations implemented against the previously agreed acceptance criteria.
+					<br>
+					Employ pair programming practices were possible to ensure the code is written by following the secure software development practices.
+				</td>
+			</tr>
+			<tr>
+				<td>Release</td>
+				<td>Test for all previously identified security vulnerabilities/risks.
+					<br>
+					If any new security bugs/vulnerabilities are discovered, address them before the deployment.
+					<br>
+					Retest to confirm remediation.
+					<br>
+					Perform pen testing on the application and network where it will be implemented (if possible) (With the help of CT).
+					<br>
+					Document the security architecture.
+					<br>
+					Prepare a security incident plan: a checklist to follow when a security incident occurs.
+					<br>
+					Prepare the security improvement plan.
+				</td>
+			</tr>
+			<tr>
+				<td>Maintenance</td>
+				<td>Patch all the systems promptly.
+					<br>
+					Implement any security improvements where feasible.
+					<br>
+					Offer training to users, including security aspects to consider.
+					<br>
+					Review project, resolve any newly identified bugs.
+					<br>
+					New iterations taking place can turn existing projects/products into upgraded versions of it including additional features.
+					<br>
+					Pentesting at least annually.
+				</td>
+			</tr>
+			<tr>
+				<td>Retirement</td>
+				<td>Ensure the data is disposed of or stored in a way that meets the regulatory requirement, e.g. consider storage security, authorisation to access the data (Tolson, 2016), etc.
+					<br>
+					Cut off any hardware or networking resources.
+					<br>
+					Migrating users to another application will occur in case of a replacement and security considerations relevant should be addressed in case of this approach.
+				</td>
+			</tr>
+		</table>
+		<p>Various Software Development processes used in the table above are described below:<br>
+			<ul>
+				<li><b>Microsoft’s Secure Development Lifecycle (SDL):</b> increases reliability and reduces maintenance cost.</li>
+				<li><b>Comprehensive Lightweight Application Security Process (CLASP):</b> Enhances Security.</li>
+				<li><b>Cigital Touchpoints (CT):</b> improves security and quality of product.</li>
+				<li><b>Common Criteria (CC):</b> allows the user of the computer system to specify security assurance and functional requirements.</li>
+			</ul>
+		</p>		
+		<p><b>References:</b>
+		<br>
+		Sharma, A. & Bawa, R. K. (2020) Identification and Integration of Security Activities for Secure Agile Development. International Journal of Information Technology.
+		<br>
+		Tolson, B. (2016) Application Retirement: What about the Data? Available from: https://www.archive360.com/blog/application-retirement-what-about-the-data [Accessed 18 June 2022].
+		</p>
 		</div>
 		
-		<button type="button" class="collapsible"><b>&#9672; Team meeting minutes - 26th of June, 2022</b></button>
+		<button type="button" class="collapsible"><b>&#9672; Blog post</b></button>
 		<div class="content">
-		<p>In the first team meeting of this module, there were three of us who had participated: myself, Sherelle and Kevin.</p>
-		<p>The meeting was quick and productive. We discussed the oustanding tasks of the unit 3 assignment, and how we will divide those up. I took upon myself to do the conclusion, 
-		Sherelle will prepare a roadmap demonstrating the ERP implementation and Keving will work on a heat map.</p>
-		<p>We have all agreed to work on cutting the word count down and completing more research on the topics we didn't have much on.</p>
+		<object width=100% height="400" data="./secure software/unit 2/blog post.html"></object>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Unit 1 discussion forum post - peer responses</b></button>
+		<div class="content">
+		<object width=100% height="400" data="./secure software/unit 2/peer responses.html"></object>
+		</div>
+		<button type="button" class="collapsible"><b>&#9672; Team meeting minutes - 23rd of June, 2022</b></button>
+		<div class="content">
+		<p>Three of us participated in our team meeting this week: me, Sherelle and Andrijana. Some were unable to join due to the time differences and so we will aim to schedule 
+		the call next time at a more suitable time for everyone.</p>
+		<p>During the team meeting we have discussed our Design document, progress made so far, the logic behind what we have done and decided on the following actions:
+			<ul>
+				<li>Add an activity diagram showing both login and registration processes instead of the current diagram. Andrijana will work on it.</li>
+				<li>Add a sequence diagram demonstrating login and registration processes between various actors and systems. Ags will work on it.</li>
+				<li>Add a class diagram demonstrating the obvious classes and attributes. Sherelle will work on it, however, everyone's input may be needed to ensure we include correct classes and attributes.</li>
+				<li>We will continue working on the specific ways we could mitigate various OWASP vulnerabilities (keeping our system in mind the whole time, so we don't include generic recommendations). Andrijana will look into it this week, however, everyone else should contribute too where possible.</li>
+				<li>Kevin will work on the system requirements and assumptions.</li>
+			</ul>
+		</p>
+		<p>We have also discussed that:
+			<ul>
+				<li>Where possible, references should come from academic sources, such as papers, journals and books. Google Scholar is a great database!</li>
+				<li>We will all pick up the bits and pieces we see missing in the assignment. If there is an empty spot in the document, it's probably because we haven't done research on it yet and so everyone should feel free to add some points.</li>
+				<li>Everyone should feel free to go in and add bits, move things about, remove things. In the end hopefully we will end up with something we are all sort of happy with.</li>
+				<li>We should include in our conclusions things that we could improve and real life implementation considerations.</li>
+			</ul>
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
-		<p>In the unit 2 we have been asked to submit an initial collaborative discussion forum post and to read upon the risk identification processes. We have started work on the 
-		unit 3 team assignment document.</p>
-		<p>The collaborative discussion required us to read a paper on the user participation impact on the Information Systems Security Risk Management (Spears & Barki, 2010) and to 
-		answer some questions, such as providing details of the Quantative vs Qualitative research methods used by the authors, their discoveries on how the users have a positive impact 
-		on the Risk Managament processes, etc. Also, how do we think not having any users to work with will impact our risk assessments we will have to complete. 
+		<p>This week we had a variety of tasks to complete.</p>
+		<p>We have been asked to identify security related actions/tasks which could be taken at each Scrum Agile software development phase. To help us out 
+			with this task we have been given a paper to read (Sharma & Bawa, 2020). The task was quite straight forward and many of the security practices 
+			that could be applied at every development stage was something we have adressed in the previous modules. From managing development projects using both 
+			Agile and Waterfall methodologies, however, I know that there isn't one methodolgy/checklist that works for everyone. Having a security tasks 
+			checklist, like the one discussed in the paper, is certainly useful, however, not all of these items will be relevant to every project. </p>
+		<p>A blog post had to also be produced this week on how to manage the people in an organisation to reduce the security associated risks whilst also using 5 different terms 
+		from the ISO/IEC standard 27000. I thought this was a good assignment, since, when doing the research for my blog post, I read quite a few different papers on the subject 
+		of the user training and I have found some interesting statistics and suggestions on how to make the training more interesting, for example, using demonstrations. I am 
+		looking at doing some Cyber security governance related tasks in my next role, and this information will be useful in my day to day job. </p>
+		<p>This week we have also continued debating in the forum on the OWASP Top 10 vulnerabilities and a few more people contributed their thoughts. My peer commented on the UML 
+		sequence diagram produced by myself and suggested that I could have probably dropped the actor 'developer' since it was not necessary in demonstrating the vulnerability. I am 
+		not sure if I agree with that, because, I wanted to show exactly how the vulnerability was introduced via the code, and I fel this was a good way of showing it. However, 
+		perhaps more research on the UML diagrams and process representation could be useful in making sure that my diagrams are not ambiguous and clear.</p>
+		<p>In this unit we have continued working in teams and we have found out that we will now be a team of 6 rather than a team of 4. This was because quite a few peers 
+		dropped out of the module as they did not wish to double up on the modules and so we all ended up being in the same team.</p>
+		<p>Working in such a large team is not without its difficulties. The communication is more difficult as some people do not always respond. However, if a person or a couple 
+		of persons are not contributing, it is less noticeable since you have a few other team members to fall back on.
 		<br>
-		I found the article being interesting, however, I do not quite agree with the authors implying that the user usefullness in the Information Security Risk Management policies cancels 
-		out the statement that users are also the weakest link in the information security process. Whilst I agree that the users provide very useful information required to design 
-		good quality Information Security Risk Management policies and that the user involvement may increase their awaraness and willingness to follow these policies, the users will 
-		still remain the weakest link, in my opinion.
+		Having a larger team also helps with assignments where some members do not have as much knowledge. Everyone then covers different assignment aspects which cover everyone's skills 
+		base.</p>
+		<p><b>References</b>
 		<br>
-		Human errors are common in every industry. Stress at work, lack of rest, etc. can make us take the wrong actions, make the wrong decisions which in turn can cause security breaches 
-		unintentionally. Whilst the user buy in helps and it does reduce the risk of human related vulnerabilities, it does not remove it.</p>
-		<p>We also had to read a chaper in the book by Sutton (2021) on the Risk Identification process. The author provided some very helpful tips on how to assess the identified 
-		risk impact, who should be involved in these assessments as well as some helpful tips on how the semi-quantitative impact assessment methods could be used. 
-		<br>The auhor has also highlighted that when assessing the impact, employee wellbeing impact should also be considered which, I have to say, I did not think about it. 
-		Employee wellbeing is a very important aspect of the risk assessment, in my opinion, and based on me not having thought about it before, it made me wonder how many more 
-		professionals in the IT industry would only assess the impact considering only the technical, operational and user related risk aspects.</p>
-		<p>This week we have also started working on our Unit 3 assignment and submitted our team contract. It was a little harder getting started this module, since we were not 
-		allocated to our teams until the start of the Unit 2, which meant that we waisted a lot of time. However, everyone in our team have worked together before and so getting into 
-		the rythm wasn't too complicated. We made a good progress on our assignment which is coming up in the Unit and had a team meeting on Sunday to agree on what is left to complete 
-		on the assignment.</p>
-		<p><b>References:</b>
-		<br>
-		Sutton, D. (2021) Information Risk Management. 2nd ed. Swindon, UK: BCS Learning & Development Limited. Chapter 4.
-		<br>
-		Spears, J. & Barki, H. (2010) User Participation in Information Systems Security Risk Management. MIS Quarterly 34(3): 503.
+		Sharma, A. & Bawa, R. K. (2020) Identification and Integration of Security Activities for Secure Agile Development. International Journal of Information Technology.
 		</p>
 		</div>
 	</div>
@@ -216,263 +370,230 @@
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 3</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>In the Unit 3 we have learned more about various Software Development Lifecycle processes, such as Waterfall, Hybrid Waterall (RAD, for example) and Agile. This was 
-	then reviewed again in terms of where the risk management processes fit in within each stage of those different processes.</p>
-		
-		<button type="button" class="collapsible"><b>&#9672; Teem meating - 3rd of July 2022</b></button>
+	<p>In the Unit 3 we have looked into the various programming languages and their history, programming paradigms, methods, security issues related to poor programming practices. 
+	We have investigated the language concepts using Python as an example and looked into the best practices and methods to be used in making the code more secure. We have been 
+	introduced to Linters and asked to practice using it on the Codio environment.</p>
+		<button type="button" class="collapsible"><b>&#9672; Team meeting</b></button>
 		<div class="content">
-		<p>Every team member has showed up for this team meeting.</p>
-		<p>We have discussed the preparation for the seminar and the following was agreed:
-			<ol>
-				<li>By the end of Monday (4th of July), everyone will post an individual list of 5 overall risk causes in the group file.</li>
-				<li>Tuesday morning Ags will compile a list of 5 most often mentioned.</li>
-				<li>By the end of Wed (6th of July) everyone will submit their individual mitigations (1 per each cause in the team list).</li>
-				<li>During Thursday (before the seminar) Hamad to convert the list of 5 team causes and individual mitigations into a .ppt and share the file in the module group Google folder.</li>
-				<li>Sherelle to present the .ppt on the seminar.</li>
-			</ol>
-		</p>
-		<p>Regarding the unit 6 assignment we have agreed to:
-			<ol>
-				<li>Kevin will work on research on NIST and justifying our choice.</li>
-				<li>Ags will work on the overall risk analysis (bullet point 2) using the NIST framework and available academic research, where possible.</li>
-				<li>Sherelle, Abidemi and Hamad will work on the Disaster recovery research that would support our RPO/RTO of 15 minutes and 4 hours respectively (please also review the working hours in the unit 3 description, since that will also impact the DR).</li>
-			</ol>
-		</p>
-		<p>We will reconvene again next Sunday at 3pm GTM (4pm BST) and discuss what has been done and agree on the next steps.</p>
-		<p>Sherelle has volunteered to share the document and take notes on the next week's call. I will join on my phone.</p>
+		<p>TBC</p>
 		</div>
 		
-		<button type="button" class="collapsible"><b>&#9672; Peer responses on the discussion forum</b></button>
+		<button type="button" class="collapsible"><b>&#9672; Coding activity</b></button>
 		<div class="content">
-		<p>The below is response from my peer Pal (2022) on my original forum discussion post.</p>
-		<blockquote><cite>
-			<p>You have nicely highlighted the benefits of user involvement in the SRM process. The research paper by Spears and Barki (2010) strongly negated the prevailing 
-			assumption that users are the weakest link in the SRM strategy. In the end you have, I feel, rightly emphasised that we will have to rely on the Quantitative data 
-			analysis of pre-existing data of risk assessments performed on similar applications and companies to fulfil our assignment.</p>
-			<p>But there lies the inherent weakness in this strategy, as you have yourself acknowledged in one of the replies (ref), making assumptions about an organisation 
-			does not come without its disadvantages. The assumptions may fall short in predicting future business conditions which could create deviations with a large impact 
-			on the organisation (Khorsandi & Aven, 2017). This may reduce the validity of the risk analysis performed.</p>
-			<p>I would like to draw your attention to the use of threat modelling concepts which work on the principle of STRIDE (how to find threats) and DREAD (method for 
-			determining risks). These approaches do have their limitations but recent work and development of threat modelling software tools, such as ThreatModeler (ThreatModeler, 
-			2016), OWASP threat dragon, Irius Risk (Hurlbut, 2017) may prove to be valuable for our task.</p>
-			<p><b>References</b>
-			<br>
-			Spears, J. & Barki, H. (2010) User Participation in Information Systems Security Risk Management. MIS Quarterly 34(3): 503.
-			<br>
-			The virtual learning environment (no date) My-course.co.uk. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=314121 (Accessed: June 29, 2022).
-			<br>
-			Khorsandi, J. and Aven, T. (2017) Incorporating assumption deviation risk in quantitative risk assessments: A semi-quantitative approach. Reliability Engineering & System Safety, 163, pp.22–32.
-			<br>
-			Approaches to Threat Modeling - are you getting what you need? (2016) ThreatModeler. Available at: https://threatmodeler.com/approaches-to-threat-modeling/ (Accessed: June 29, 2022).
-			<br>
-			Hurlbut, R. (2017) Learning about Threat Modeling, Medium. Available at: https://medium.com/@roberthurlbut/learning-about-threat-modeling-3f6811e7520c (Accessed: June 29, 2022).
-			</p>
-		</blockquote></cite>
-		<p>My response to Anoushka's post is below.</p>
-		<blockquote><cite>
-			<p>Hi Anoushka,
-			<br>
-			I absolutely agree, and as I mentioned in my original post, there are many disadvantages of using assumptions when producing a risk assessment.</p>
-			<p>Your proposed threat modelling and risk assessment methods are widely used and accepted among the professionals, however, these still rely on the assumptions in 
-			the absence of access to the users and data. Thus, the results produced by these tools could still fall short in producing anything of use.</p>
-			<p>However, as the paper Frage & Askeland (2020) points out, assumptions are unavoidable in the quantitative data analysis, when qualitative data analysis is not an 
-			option: assumptions are used in every risk assessment. However, as long as the risk analyst is aware of the assumptions and the potential risks associated to those 
-			and address it as part of the risk assessment report, the decision makers will have a better picture and will still be able to make better justified decisions.</p>
-			<p><b>References</b>
-			<br>
-			Flage, R. and Askeland, T. (2020) Assumptions in quantitative risk assessments: when explicit and when tacit? Reliability Engineering & System Safety, p.106799. 
-			</p>
-		</blockquote></cite>
-		<p><b>References</b>
-		<br>
-		Pal, A. (2022) Peer response. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=313828 [Accessed 2 July 2022].
-		</p>
+		<p>In this unit we have been given a quick coding practice. We have been asked to run a code in C programing language which doesn't validate user's input and thus presents 
+		a buffer overflow error if the input exceeds allowed length, and then asked to run a similar code in Python, which also triggers a buffer overflow error, just differently. 
+		Then, asked to use Pylint linter in testing the Python code and analysing the results.</p>
+		<p>The screenshots below presents what the Python code looked like when Pylint library was called and executed on the file containing the Python code as well as what the 
+		scan results looked like.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 3/python overflow.PNG">
+		<img class="img-responsive" alt="" src="./secure software/unit 3/pylint scan.PNG">
+		<p>I then used the errors provided by Pylint and looked them up in the guidance documentation available for this library and I was able to resolve the errors; please see the 
+		screenshot below of the updated code (the code file name also had to be updated to use lower case letters to adhere to Python's naming convention).</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 3/correctly written code.PNG">
+		<p>Interesting point here is that Pylint has made sure that the code meets the Python language standards, however, the buffer overflow issue created by range of 14 exceeding the 
+		array range of 10 has not been resolved. So the code still has security issues which can be picked up by the users testing boundaries and fixed by visual code inspection.</p>
 		</div>
-
-		<button type="button" class="collapsible"><b>&#9672; Risk assessment report & Tutor feedback</b></button>
+		
+		<button type="button" class="collapsible"><b>&#9672; Team discussion</b></button>
 		<div class="content">
-			<h3>Introduction</h3>
-			<p>Acme Manufacturing has decided to purchase an ERP (Enterprise Resource Planning) system and is considering three options:
-			  <ul>
-				<li>A commercial off-the-shelf (COTS) solution.</li>
-				<li>An open-source (OS) solution.</li>
-				<li>An in-house developed solution.</li>
-			</ul>
-			</p>
-			<h3>Company Profile and Risk Appetite</h3>
-			<p>Acme Manufacturing is a small-to-medium sized enterprise (SME), employing 150 staff. They currently use spreadsheets to track and manage resource 
-			  planning and scheduling. Based upon research into similar organisations, this report makes the following assumptions:
-			  <ul>
-				<li>The company has a small IT team where every person performs multiple tasks (Malhotra & Temponi, 2010).</li>
-				<li>The company has a flat hierarchy, enabling faster decisions (Poba-nzaou & Raymondl, 2010).</li>
-				<li>Acme Manufacturing is profitable; annual turnover up to £25m (Clark, 2022).</li>
-				<li>The company prioritises steady over aggressive growth (Yap & Ng, 2015).</li>
-				<li>The company is privately owned, based on the SME UK statistics (Office for National Statistics, 2018).</li>
-				<li>The company uses a functional organizational structure; the tasks are divided into functional units where each unit handles one aspect of the 
-				  product/service (Kovaci et al, 2021).</li>
-			</ul>
-			Based upon this profile, according to the UK SMEs Survey by Studio Graphene (Jones, 2021) Acme Manufacturing is likely risk averse and possesses a low-risk 
-			appetite.
-			</p>
-			<h3>Business risks</h3>
-			<p>
+		<p>My contribution to the team discussion can be seen below.</p>
+		<object width=100% height="400" data="./secure software/unit 3/my contribution to team discussion.html"></object>
+		<p>Details of the team discussion and the presentation produced afterwards can be viewed below.</p>
+		<p>We have not had many team discussions on this subject, however, me and Andrijana seem to share the same views: Python is potentially just as secure coding language 
+		as many others and the security of it is dependant upon the implementation. We also both agree that Python could be used for developing an OS.</p>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Design document and tutor's feedback</b></button>
+		<div class="content">
+		<h3>Introduction</h3>
+		<p>This design document discusses the system requirements, security challenges and design of a new secure repository for the Dutch Police Internet Forensics organisation.</p>
+		<h3>Web Application Functionality</h3>
+		<p>
 			<ul>
-			  <li>Lack of employee buy-in can negatively impact ERP implementation time, effort, and cost (Malhotra & Temponi, 2010).</li>
-			  <li>Poorly implemented ERP systems may not provide return on investment and impact performance (Quiescenti, 2006; Summer, 2000).</li>
-			  <li>SMEs are less likely to survive/overcome a failed ERP implementation (Muscatello et al., 2003).</li>
+				<li>Provides latest cybersecurity news, alerts, allowing subscriptions.</li>
+				<li>Allows organisations to register, report, and manage security incidents.</li>
+				<li>Allows individuals to register, report and manage GDPR breaches.</li>
 			</ul>
-			</p>
-			<h3>ERP Options Risk Assessment</h3>
-			<p>
+			<img class="img-responsive" alt="" src="./secure software/unit 3/activity diagram.png">
+			<br>
+			<i>Figure 1: UML activity diagram demonstrating user/organisation registration/login process.</i>
+			<img class="img-responsive" alt="" src="./secure software/unit 3/sequence diagram.png">
+			<i>Figure 2: UML sequence diagram representing user/organisation login/registration process using Django MVT architecture.</i>
+			<img class="img-responsive" alt="" src="./secure software/unit 3/class diagram.png ">
+			<i>Figure 3: UML class diagram demonstrating main classes and attributes.</i>
+		</p>
+		<h3>System Requirements & Assumptions</h3>
+		<p>To meet the needs of the Dutch Police Internet Forensics, the system design should incorporate the following:
+			<ul>
+				<li>System will act as an evidence repository for primarily unstructured data related to forensic investigations (Kebande et. al., 2021).</li>
+				<li>As of 2013, the organisation had 9,500 staff (Hillenius, Gijs, 2013). The system may additionally need to be accessed by other law enforcement organisations.</li>
+				<li>The system must meet all applicable privacy and security regulations (e.g., GDPR).</li>
+				<li>The system should implement Forensics as a Service (FaaS) to take advantage of cloud-based, elastic CPU and storage capabilities (Nanda & Hansen, 2016).</li>
+			</ul>
+		</p>
+		<h3>Design Decisions, Tools, and Libraries</h3>
+		<p>
+			<ul>
+				<li>Python 3.10 and Django 4.0.5 open-source framework (Ghimire, 2020) will be used.</li>
+				<li>Djago’s serverless SQL database SQLite is to be utilised (Tiwari et. al., 2019). See Appendix A.</li>
+				<li>Passwords will be hashed and salted using SHA512 and the Python Secrets module for generating a secure random salt (Al Farawn et. al., 2019). The hash will be iterated 100 times to increase unhashing time (Ji et. al., 2017). Database to store salted hash passwords.</li>
+				<li>Traffic between database and web application will be communicated over HTTPS (Kamanin, 2021).</li>
+				<li>The Django-cryptography symmetric encryption package (PyPI, 2022) will be used to encrypt sensitive user data.</li>
+				<li>User interface to be developed with HTML and CSS stylesheets (Tiwari et. al., 2019).</li>
+				<li>Code will be improved with Python linters (Pyling, Pyflakes) (Farah, 2014).</li>
+			</ul>
+		</p>
+		<h3>Security Challenges</h3>
+		<p>Relevant vulnerability identification and mitigation are based on OWASP’s Top 10 (2021a) framework.
 			<table>
-			  <tr>
-				<th>ERP options</th>
-				<th>Applicable risks</th>
-			  </tr>
-			  <tr>
-				<td>COTS Solution</td>
-				<td>
-				  <ul>
-					<li>R1 - Due to inflexibility, the COTS solution may not support all business requirements (Malhotra & Temponi, 2010).</li>
-					<li>R2 - New versions can incur additional implementation costs (Babey, 2006).</li>
-					<li>R3 - COTS tend to require a high level of costly customisation (Babey, 2006; Quiescenti, 2006).</li>
-					<li>R4 - Total costs of a COTS solution often reduce annual profits (Holland & Skarke, 2001).</li>
-					<li>R5 - Increases reliance on a single vendor and inherits any vendor security issues (Tasnawijitwong & Samanchuen, 2018).</li>
-					<li>R6 - 66% to 70% of ERP implementations fail (Poba‐Nzaou et al, 2008) leading to significant financial loss if COTS solution is used.</li>
-					<li>R7 - Many known COTS providers do not support the DR requirements (QuickBooks, 2011; OracleNetsuite, 2022).</li>
-				  </ul>
-				</td>
-			  </tr>
-			  <tr>
-				<td>Open-source solution</td>
-				<td>
-				  <ul>
-					<li>R1 - No vendor support available (Olson et al, 2018).</li>
-					<li>R2 - Lack of documentation, compliance with industrial standards, liability responsibility (Olson et al, 2018).</li>
-					<li>R3 - High level of customisation, if implemented, can introduce security vulnerabilities (Ashraf, 2019).</li>
-					<li>R4 - Open-source libraries often introduce security vulnerabilities (Veracode, 2021).</li>
-					<li>R5 - Open-source ERP could have higher IT costs (Economides & Katsamakas, 2006, as cited in Johansson & Sudzina, 2008 ).</li>
-				  </ul>
-				</td>
-			  </tr>
-			  <tr>
-				<td>In-house solution</td>
-				<td>
-				  <ul>
-					<li>R1 - Inexperienced personnel can take a long time to implement an in-house ERP solution (Malhotra & Temponi, 2010).</li>
-					<li>R2 - Potential security risks as the developer is inexperienced (Amroussi, 2022).</li>
-					<li>R3 - The system may become unmanageable if the developer leaves the organisation (Shahzad et. al., 2017).</li>
-				  </ul>
-				</td>
-			  </tr>
+				<tr>
+					<th>OWASP Category</th>
+					<th>Vulnerability Mitigation</th>
+				</tr>
+				<tr>
+					<td>A01:2021-Broken Access Control</td>
+					<td>Install Django session framework, enable user authentication tools (Holovaty & Kaplan-Moss, 2009).</td>
+				</tr>
+				<tr>
+					<td>A02:2021-Cryptographic Failures</td>
+					<td>Encrypt sensitive data, proper key management (Mattsson, 2005).</td>
+				</tr>
+				<tr>
+					<td>A03:2021-Injection</td>
+					<td>Validate user input, use regex patterns (Aborujilah, 2022). Restrict field length to only what is necessary (Holovaty & Kaplan-Moss, 2009).</td>
+				</tr>
+				<tr>
+					<td>A04:2021-Insecure Design</td>
+					<td>Website URLs won’t pass sensitive user data, e.g., user ID (Holovaty & Kaplan-Moss, 2009).</td>
+				</tr>
+				<tr>
+					<td>A05:2021-Security Misconfiguration</td>
+					<td>Build a minimalist platform (no unnecessary features, components, samples, documentation) (OWASP, 2021c).</td>
+				</tr>
+				<tr>
+					<td>A06:2021-Vulnerable and Outdated Components</td>
+					<td>Use dependency checkers to check for outdated/vulnerable components (Maier et. al., 2019).</td>
+				</tr>
+				<tr>
+					<td>A07:2021-Identification and Authentication Failures</td>
+					<td>Implement Multi-Factor Authentication (Ometov et.al., 2018).</td>
+				</tr>
+				<tr>
+					<td>A08:2021-Software and Data Integrity Failures</td>
+					<td>Verify software/data sources via digital signatures (OWASP, 2021e).</td>
+				</tr>
+				<tr>
+					<td>A09:2021-Security Logging and Monitoring Failures</td>
+					<td>Log login, access control, and server-side input validation failures with adequate user context and hold for enough time to allow forensic analysis (OWASP, 2021d).</td>
+				</tr>
+				<tr>
+					<td>A10:2021-Server-Side Request Forgery (SSRF)</td>
+					<td>Do not send raw responses to clients and enable authentication on all services (Zlojic, 2022).</td>
+				</tr>
 			</table>
-			<i>Table 1: The ERP options and their applicable risks.</i>
-			<br>
-			<img class="img-responsive" alt="" src="./Information risk management/unit 3/image 1.png">
-			<br>
-			<img class="img-responsive" alt="" src="./Information risk management/unit 3/image 2.png">
-			<br>
-			<img class="img-responsive" alt="" src="./Information risk management/unit 3/image 3.png">
-			</p>
-			<h3>Recommendation and Conclusions</h3>
-			<p>Based on the identified requirements and risks, we recommend the open-source solution. </p>
-			<p>The benefits of open-source ERP applications exceed the potential disadvantages (see Table 1):
-			  <ul>
-				<li>Tools are more customisable to support business needs (Johansson & Sudzina, 2008)</li>
-				<li>Implementation can be scheduled around the business roadmap (see Appendix A)</li>
-				<li>The cost is lower (Riehle, 2007) resulting in a lower failure cost</li>
-				<li>The IT team, after training, is likely to provide prompter support (Chang, 2004)</li>
-				<li>Disaster recovery objectives may be easier to satisfy (see appendix B), especially if an open-source cloud-based solution is used (CompuData, 2019)</li>
+		</p>
+		<h3>Architectural and design patterns, SDLC approaches</h3>
+		<p>
+			<ul>
+				<li>The Django MVT pattern to be used for the request routing separation from the user interface (Holovaty & Kaplan-Moss, 2009).</li>
+				<li>Object oriented paradigm will be implemented to construct code elements (Rumbaugh et. al., 2003).</li>
+				<li>A secure Scrum SDLC will be used:
+					<ul>
+						<li>Requirements/Design phases to include security requirements.</li>
+						<li>Implementation stage backlog to include security issues.</li>
+						<li>Verification phase to cover security testing (Maier et. al., 2017).</li>
+					</ul>
+				</li>
 			</ul>
-			</p>
-			<h3>References</h3>
-			<p>
-			Amah, E. and Okoisama, T. (2017) Risk Taking and Survival of Small and Medium Scale Enterprises in Nigeria. Archives of Business Research, 5(11). doi:10.14738/abr.511.3769.
-			<br>
-			Amroussi, O. (2022) What Is Spaghetti Code and Why Is It a Problem? Available from: https://vulcan.io/blog/what-is-spaghetti-code-and-why-is-it-a-problem/ [Accessed 29 June 2022].
-			<br>
-			Ashraf, H., Alenezi, M., Nadeem, M. and Javid, Y. (2019). Security assessment framework for educational ERP systems. International Journal of Electrical and Computer Engineering (IJECE), 9(6), p.5570. 
-			<br>
-			Babey, E.R. (2006) Costs of enterprise resource planning system implementation—and then some. New Directions for Higher Education, 2006(136).
-			<br>
-			  Clark, D. (2022) Profitability of small and medium enterprises (SME) in the manufacturing sector in the United Kingdom (UK) in the years ending June 2014 and June 2020. Available from: https://www.statista.com/statistics/291358/small-and-medium-enterprises-sme-manufacturing-profitability-uk/ [Accessed 22 June 2022].
-			<br>
-			  CompuData (2019) On-Premise ERP to Cloud ERP: 5 Reasons to Make the Move. Available from: https://www.compudata.com/on-premise-erp-to-cloud-erp-5-reasons-to-make-the-move/ [Accessed 27 June 2022].
-			<br>
-			  Holland, W., Skarke, G. (2001) Is your IT system vested? Strategic Finance, 83(6), 34–36.
-			<br>
-			  Hughes, S. and Noblit, G. (2016). Meta-ethnography of autoethnographies: a worked example of the method using educational studies. Ethnography and Education, 12(2), pp.211–227. 
-			<br>
-			  Johansson, B. and Sudzina, F. (2008). ERP systems and open source: an initial review and some implications for SMEs. Journal of Enterprise Information Management, 21(6), pp.649–658. 
-			<br>
-			  Jones, R. (2021) Research Shows UK Businesses’ Risk Appetite is Climbing. Available from: https://businessnewswales.com/research-shows-uk-businesses-risk-appetite-is-climbing/ [Accessed 27 June 2022].
-			<br>
-			  Kovaci,I., Tahiri, A., Bushi,F. And Zhubi, M. (2021). Organization as a Function of Management and the Types of Organizational Structures that Apply in SMEs in Kosovo. Calitatea, 22(181), 3-6.
-			<br>
-			  Malhotra, R. and Temponi, C. (2010) Critical decisions for ERP integration: Small business issues. International Journal of Information Management, [online] 30(1), pp.28–37.
-			<br>
-			  Muscatello, J.R., Small, M.H. and Chen, I.J. (2003). Implementing enterprise resource planning (ERP) systems in small and midsize manufacturing firms. International Journal of Operations & Production Management, 23(8), pp.850–871.
-			<br>
-			  Office for National Statistics (2018) Public and private sector by size. Available from: https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/adhocs/008157publicandprivatesectorbysize [Accessed 27 June 2022].
-			<br>
-			  Olson, D.L., Johansson, B. and De Carvalho, R.A. (2018) Open source ERP business model framework. Robotics and Computer-Integrated Manufacturing, 50, pp.30–36.
-			<br>
-			  Oracle Netsuite (2022) Scaling netsuite service tier and suitecloud plus fact sheet. Available from: https://1025736.app.netsuite.com/core/media/media.nl?id=682582&c=1025736&h=a30e30da98a422c18fa2&_xt=.pdf [Accessed 27 May 2022].
-			<br>
-			  Poba‐Nzaou, P., Raymond, L. and Fabi, B. (2008) Adoption and risk of ERP systems in manufacturing SMEs: a positivist case study. Business Process Management Journal, 14(4), pp.530–550. 
-			<br>
-			  Poba-Nzaou,P., Raymond,L. (2010) Managing ERP system risk in SME: a multiple case study. Available at: https://link.springer.com/article/10.1057/jit.2010.34#App4 [accessed: 27th Jun,2022]
-			<br>
-			  Quiescenti, M., Bruccoleri, M., La Commare, U., Noto La Diega, S. and Perrone, G. (2006) Business process-oriented design of Enterprise Resource Planning (ERP) systems for small and medium enterprises. International Journal of Production Research, 44(18-19), pp.3797–3811.
-			<br>
-			  QuickBooks (2011) Understanding QuickBooks Auto Data Recovery. Available from: https://quickbooks.intuit.com/r/quickbooks-online/understanding-quickbooks-auto-data-recovery/ [Accessed 27 June 2022].
-			<br>
-			  Riehle, D. (2007) The economic motivation of open source: stakeholders perspectives. Computer IEE Computer Society, Vol. 40 No. 4, pp. 25-32.
-			<br>
-			  Shahzad, B., Kinza MEHR Awan, Muhammad Ikram Lali and Aslam, W. (2017). Identification of Patterns in Failure of Software Projects. [online] ResearchGate. Available at: https://www.researchgate.net/publication/319643465_Identification_of_Patterns_in_Failure_of_Software_Projects [Accessed 26 Jun. 2022].
-			<br>
-			  She-I Chang (2004). ERP life cycle implementation, management and support: implications for practice and research. 37th Annual Hawaii International Conference on System Sciences, 2004.
-			<br>
-			  Sumner, M. (2000). Risk Factors in Enterprise-Wide/ERP Projects. Journal of Information Technology, 15(4), pp.317–327. 
-			<br>
-			  Tasnawijitwong, S. and Samanchuen, T. (2018) Open source ERP selection for small and medium enterprises by using analytic hierarchy process. 
-			<br>
-			  Veracode (2021) State of software security volume 11: open source edition. The life and times of third-party software. Available from: https://www.veracode.com/blog/research/announcing-state-software-security-v11-open-source-edition [Accessed 29 June 2022].
-			<br>
-			  Yap, A., K., Ng, Y. (2015) Corporate Governance Mechanisms: Evidence From Small- and Medium-Sized Enterprises (SMEs). Journal of Modern Accounting and Auditing, 11(7). 
-			</p>
-			<h3>Appendix A - ACME Gantt Chart</h3>
-			<p>
-			  <img class="img-responsive" alt="" src="./Information risk management/unit 3/image 4.png">
-			</p>
-			<h3>Appendix B - Disaster recovery system setup</h3>
-			<p>
-			  <img class="img-responsive" alt="" src="./Information risk management/unit 3/image 5.png">
-			</p>
-		</div>
-		
-		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
-		<div class="content">
-		<p>In the unit 3 we have been asked to read upon the Object Oriented Development (Rumbaugh et at, 2003) and various Agile models (Abrahamsson, 2003). We also had to submit our 
-		team project on assessing the risks of the three ERP systems that the assigned manufacturing company is looking to implement whilst also having to continue our discussions 
-		started in the Unit 2.</p>
-		<p>I have enjoyed both papers from this unit. We have touched upon the object oriented programming practices in the first module of this Master's degree and have even been asked to 
-		implement it in our end of module assignment. I still think that whilst the papers provide a good on overview of this method's benefits, I would myself prefer having some practical 
-		assignments, such as lessons on Codio, which we could complete to learn the practical ways to implement it.
+		</p>
+		<h3>Conclusion</h3>
+		<p>This design document includes system requirements and assumptions for a prototype of the Dutch Police Internet Forensics web application. Security challenges alongside 
+		mitigation techniques are identified and highlighted in Table 1. The web application will use these techniques to mitigate its potential vulnerabilities. Design decisions 
+		are related to the production of the prototype and certain aspects of the design must be revisited before releasing the application to the public.</p>
+		<h3>References</h3>
+		<p>
+		Aborujilah, A., Adamu, J., Shariff, S.M. and Awang Long, Z. (2022). Descriptive Analysis of Built-in Security Features in Web Development Frameworks. [online] IEEE Xplore. 
 		<br>
-		Meanwhile the paper on Agile was quite informative, since it covered quite a few different Agile practices. I liked how the authors recognised the lack of clear guidance many of these 
-		Agile methods provide. I have often observed during my career as an IT prohect manager, that many companies state they use one or the other Agile method, without stopping and thinking 
-		whether it is actually the method they are using. Agile, these days bave become a collection of tools rather than a mentality too. I often find companies call themselves agile if 
-		they use one of the popular backlog tracking tools, such as Jira, Github, Trello, etc.
+		Al Farawn, A., Salih Ali, N. & Alattar, M. (2019) Anti-Continuous Collisions User Based Unpredictable Iterative Password Salted Hash Encryption. International Journal of Internet Technology and Secured Transactions, 1(1): 1.
 		<br>
-		My one concer was, however, the age of these papers. I think there is more recent research in both these fields that could have been used as the reading materials for this module.</p>
-		<p>This week we have also finalised our report due to be submitted this week as a team. I think the resulting submission was of good quality, however, it was dissapointing 
-		that some did not contribute as much as others or started contributing when the document was being finalised, despite of multiple reminders.</p>
-		<p><b>References:</b>
+		Farah, G., Tejada, J.S. and Correal, D. (2014). OpenHub: a scalable architecture for the analysis of software quality attributes. Proceedings of the 11th Working Conference on Mining Software Repositories - MSR 2014.
+		<br>
+		Ghimire, D. (2020) Comparative study on Python web frameworks: Flask and Django. Available from: https://www.theseus.fi/handle/10024/339796 [Accessed 20 June 2021].
+		<br>
+		Hillenius, Gijs (2013). ‘Open source only’ at Dutch p…. [online] Joinup. Available at: https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-only-dutch-p [Accessed 27 Jun. 2022].
+		<br>
+		Holovaty, A. & Kaplan-Moss, J. (2009). The definitive guide to Django web development done right ; [Django is a framework that saves you time and makes Web development a joy ; updated for Django 1.1]. Berkeley, Calif. Apress [U.A.].
+		<br>
+		Ji, R., Liu, H., Cao, L., Liu, D., Wu, Y. & Huang, F. (2017). Toward Optimal Manifold Hashing via Discrete Locally Linear Embedding. IEEE Transactions on Image Processing, [online] 26(11): 5411–5420. 
+		<br>
+		Kamanin, T. (2021) How to run a local Django development server over HTTPS with a trusted self-signed SSL certificate. Available from: https://timonweb.com/django/https-django-development-server-ssl-certificate/ [Accessed 20 June 2021].
+		<br>
+		Kebande, V.R., Karie, N.M., Kim-Kwang Raymond Choo and Sadi Alawadi (2021). Digital forensic readiness intelligence crime repository. [online] ResearchGate. Available at: https://www.researchgate.net/publication/349367312_Digital_forensic_readiness_intelligence_crime_repository [Accessed 27 Jun. 2022].
+		<br>
+		Maier, P., Ma, Z. & Bloem, R. (2017) ‘Towards a Secure SCRUM Process for Agile Web Application Development’, ARES ‘17: International Conference on Availability, Reliability, and Security. Reggio Calabria, Italy, 29 August - 1 September. New York: Association for Computing Machinery. 1-8. 
+		<br>
+		Mattsson, U. T. (2005). Database Encryption - How to Balance Security with Performance. SSRN Electronic Journal 1(1): 1-16.
+		<br>
+		Nanda, S. and Hansen, R.A. (2016). Forensics as a Service: Three-Tier Architecture for Cloud Based Forensic Analysis. [online] ResearchGate. Available at: https://www.researchgate.net/publication/301553168_Forensics_as_a_Service_Three-Tier_Architecture_for_Cloud_Based_Forensic_Analysis [Accessed 27 Jun. 2022].
+		<br>
+		OWASP (2021a) Top 10:2021 List. Available from: https://owasp.org/Top10/ [Accessed 23 June 2022].
+		<br>
+		OWASP (2021b) A05:2021 - Security Misconfiguration. Available from: https://owasp.org/Top10/A05_2021-Security_Misconfiguration/ [Accessed 25 June 2022].
+		<br>
+		OWASP (2021c) A08: Software and Data Integrity Failures. Available from: https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/ [Accessed 25 June 2022].
+		<br>
+		OWASP (2021d) A09:2021 - Security Logging and Monitoring Failures. Available from: https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/ [Accessed 25 June 2022].
+		<br>
+		Petsas, T., Tsirantonakis, G., Athanasopoulos, E. & Ioannidis, S. (2015) ‘Two-factor Authentication: Is the World Ready? Quantifying 2FA Adoption’, EuroSys ‘15: Tenth EuroSys Conference 2015. Bordeaux, France, 21 April. New York: Association for Computing Machinery. 1-7.
+		<br>
+		PyPI (2022) django-cryptography 1.1. Available from: https://pypi.org/project/django-cryptography/ [Accessed 24 June 2022].
+		<br>
+		Ometov, A., Bezzateev, S., Mäkitalo, N., Andreev, S., Mikkonen, T. & Koucheryavy, Y. (2018). Multi-Factor Authentication: A Survey. Cryptography 2(1): 1-31.
 		<br>
 		Rumbaugh, J. Ralston, A., & Reilly, E. (2003) Object Oriented Analysis and Design (OOAD) The Encyclopaedia of Computer Science. 4th Ed. UK: John Wiley and Sons Ltd.
 		<br>
-		Abrahamsson, P., Warsta, J., Siponen, M. & Ronkainen, J. (2003) New Directions on Agile Methods: A Comparative Analysis. Proceedings of the 25th International Conference on Software Engineering (ICSE '03) 1(1): 244 - 254.
+		Tiwari, U., Mehfuz, S., Sharma, S. & Pandey, V.T. (2019). Design of Python Based Lost and Found Website for College Campus. [online] IEEE Xplore.
+		<br>
+		Zlojic, A. (2022) Server Side Request Forgery (SSRF) Attacks and How to Prevent Them. Available from: https://brightsec.com/blog/ssrf-server-side-request-forgery/ [Accessed 28 June 2022].
+		</p>
+		<h3>Appendix</h3>
+		<h4>Appendix A - Data dictionary</h4>
+		<p><b>Application database</b>
+			<img class="img-responsive" alt="" src="./secure software/unit 3/Application database.png">
+		</p>
+		<p><b>Passwords database</b>
+			<img class="img-responsive" alt="" src="./secure software/unit 3/Passwords database.png">
+		</p>
+		</div>
+	
+		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
+		<div class="content">
+		<p>In this unit we have been asked to read a few papers and a few more chapters from the book by Pillai (2017). </p>
+		<p>The book by Pillai continued looking into various software/application design patterns and architecture. This was an extension on what we had already learned from our 
+		lecturecast. The chapters were extremelly helpful for our assignment, since within this assignment we must choose paradigms, patterns and architecture we will be implementing.</p>
+		<p>We have also read a paper by Ferrer et al. (2012) on how the complexity of software testing could be estimated to predict the amount of test cases needed. Whilst I do see a benefit 
+		of this estimation when planning the overall project delivery and needing to know how long could a testing phase take, I do not see project managers implementing this menthod 
+		themselves, due to its complexity. If it was automated and incorporated in one of the other known project management tools, then potentially, this could be a great addition to the 
+		project manager's toolkit.</p>
+		<p>Another paper we looked at (Shepperd, 1988) critiqued Cyclomatic approach to analysing the software complexity. The author has pointed many shortcomings of this approach which 
+		is often cited in other research papers, such as the difficulty of being able to split the software into the components or the difficulty of listing out all the potential 
+		paths within the software, which are necessary in the complexity analysis. Based on this, it appears to be a model betters suited for science world, rather than a business project 
+		management. This metric is complex to measure and also not very straigt forward due to many intepretations available, which makes it unsuitable for using it in the real life scenarios.</p>
+		<p>We have also learnt more on all types of software testing and the testing worklof (ISO/IEC/IEEE, 2015) which will be very useful before submitting our completed web application in 
+		the unit 6.</p>
+		<p>This week we have continued working on our design document due by the end of week 3. The assignment is coming along nicely and most peers are making contributions. We are continuing 
+		to communicate both on the emails and whatsapp and we are schedulling team meetings to discuss pressing topics in person.</p>
+		<p>We also had to prepare for the seminar as a team. Whilst I have completed my individual preparation which was then meant to be discussed with the remaining team members, 
+		the rest of the team did not submit their work. With some peers doubling up on the modules, non - scored assignments may not be a priority.</p>
+		<p><b>References</b>
+		<br>
+		Pillai, A.B. (2017) Software Architecture with Python. Birmingham, UK. Packt Publishing Ltd.
+		<br>
+		Ferrer, J., Francisco, C. & Enrique, A. (2012) Estimating Software Testing Complexity. Information and Software Technology.
+		<br>
+		Shepperd, M. (1988) A Critique of Cyclomatic Complexity as a Software Metric, Software Engineering Journal.
+		<br>
+		ISO/IEC/IEEE (2015), Software and Systems Engineering – Software Testing – Part 4: Test Techniques, ISO/IEC/IEEE 29119-4. 
 		</p>
 		</div>
 	</div>
@@ -480,49 +601,168 @@
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 4</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>The unit 4 focuses on the review of risks associated with various SDLC stages and discussions on each risk mitigation options.</p>
-	
-		<button type="button" class="collapsible"><b>&#9672; Seminar preparation and team discussions</b></button>
+	<p>In the unit 4 we have focussed on developing the software testing plans and understanding more about the industry software testing standards. We looked at the ways to automate 
+		testing and various techniques available applicable to each Software development lifecycle stage. We have also looked at data encryption techniques and distributed 
+		architecture.</p>
+		
+		<button type="button" class="collapsible"><b>&#9672; Seminar preparation - file encryption</b></button>
 		<div class="content">
-		<p>For the seminar, we had to read two papers and compile a list of 5 overall risk causes. My compilation can be seen below.</p>
-		<object width=100% height="400" data="./Information risk management/unit 4/5 overall risks.html"></object>
-		<p>We then had to build a list of 5 overall causes as a team, and finally, each individually come up with 5 mitigations (one for each overall risk), and then 
-		create a team list of mitigations. The overall team presentation can be seen below.</p>
-		<img class="img-responsive" alt="" src="./Information risk management/unit 4/capture 1.png">
-		<img class="img-responsive" alt="" src="./Information risk management/unit 4/capture 2.png">
-		<img class="img-responsive" alt="" src="./Information risk management/unit 4/capture 3.png">
-		<img class="img-responsive" alt="" src="./Information risk management/unit 4/capture 4.png">
-		<img class="img-responsive" alt="" src="./Information risk management/unit 4/capture 5.png">
+		<p>For the Unit 4 seminar preparation I wrote a program which takes a .csv file and encrypts it using the Python cryptography module, the symmetric Fernet encryption method. The program can be seen below.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit4/program.png">
+		<p>I chose to use cryptography module and Fernet symmetric encryption because (Lake, 2022):
+			<ul>
+				<li>The cryptographic primitives are readily available by using Fernet, which means that you don’t have to work out the algorithms yourself, which could result in an incorrect implementation and insecure data store or data loss (if it cannot be un-encrypted).</li>
+				<li>It is a well maintained Python library managed by the Python Cryptographic Authority.</li>
+				<li>Fernet’s cryptographic primitives include HMAC with SHA-256 and 128-bit AES (advanced encryption standards) in CBC mode.</li>
+				<li>The user can verify the fernet token before decrypting the data to ensure the data authenticity.</li>
+			</ul>
+		</p>
+		<p>The symmetric cryptography provided by the Python cryptography module, Fernet encryption does meet the GDPR requirements. The GDPR says that the person must not be able to view the data without a key (GDPR, 2022), so as long as the symmetric key is stored securely, the GDPR regulations would be met. Also, the primitives used by Fernet such as AES and HMAC are FIPS 140-2 and FIPS 197 compliant, which is one of the ico’s requirements in the UK (ico, 2022).</p>
+		<p><b>References</b>
+		<br>
+		GDPR (2022) Encryption. Available from: https://gdpr-info.eu/issues/encryption/ [Accessed 3 July 2022].
+		<br>	
+		Ico (2022) Encryption. Available from: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/security/encryption/ [Accessed 3 July 2022].
+		<br>
+		Lake, J. (2022) What is fernet and when should you use it? Available from: https://www.comparitech.com/blog/information-security/what-is-fernet/ [Accessed 3 July 2022].
+		</p>
+		</div>
+		
+		<button type="button" class="collapsible"><b>&#9672; Team meeting - 5th of July, 2022</b></button>
+		<div class="content">
+		<p>During the team meeting we held, me and Kate have discussed the best approach to carrying out the work in the Unit 6.</p>
+		<p>We have agreed to drop some functionality from the design document and limit the current application so it only allows a user to register, log in, log data breaches 
+		and view any they have already logged. We have agreed that all additional functionality is not necessary to demonstrate our secure web applications understanding and may 
+		be difficult to carry out in the time constraints we have.</p>
+		<p>We have also discussed the best way to distribute the tasks and agreed that it is not necessary for everyone to work on the same task, for example, the code development. 
+		And as such, Kate has volunteered to work on the code whilst I will perform the testing and its documentation, including running of any linters and code updates. Andrijana and 
+		Sherelle will pick up the documentation of the README file and the documentation of the differences between our original design proposal and the final application produced.</p>
+		</div>
+		<button type="button" class="collapsible"><b>&#9672; Codio activities - pylint, flake8 and mccabe</b></button>
+		<div class="content">
+		<p><b>Question 1</b>
+		<br>
+			<ul>
+				<li>Run styleLint.py in Codio.</li>
+				<li>What happens when the code is run? Can you modify this code for a more favourable outcome? What amendments have you made to the code?</li>
+			</ul>
+		</p>
+		<p>The code is in the image below.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 1.png">
+		<br>
+		When you try to run it, you get an indentation error.
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 2.png">
+		<br>
+		To fix the indentation, the code should look like the one below. I.e. the function description, if and else statements must be indented once, whilst the return statements must be indented twice.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 3.png">
+		</p>
+		<p><b>Question 2</b>
+		<br>
+			<ul>
+				<li>pip install pylint</li>
+				<li>Run pylint on pylintTest.py</li>
+				<li>Review each of the code errors returned. Can you correct each of the errors identified by pylint?</li>
+				<li>Before correcting the code errors, save the pylintTest.py file with a new name (it will be needed again in the next question).</li>
+			</ul>
+		</p>
+		<p>The code in pylintTest.py file before the corrections looked like this.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 4.png">
+		<br>
+		Then I ran the pylint on this file, and got the following error.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 5.png">
+		<br>
+		I then corrected the code by adding the brackets around the encode in print statement and when I ran pylint, I got a lot more new errors.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 6.png">
+		<br>
+		I then corrected the code again; the corrected  code can be seen below.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 7.png">
+		</p>
+		<p><b>Question 3</b>
+		<br>
+			<ul>
+				<li>pip install flake8</li>
+				<li>Run flake8 on pylintTest.py</li>
+				<li>Review the errors returned. In what way does this error message differ from the error message returned by pylint?</li>
+				<li>Run flake8 on metricTest.py. Can you correct each of the errors returned by flake8? What amendments have you made to the code?</li>
+			</ul>
+		</p>
+		<p>I ran the flake8 on the pylint_test.py file and received the following error messages.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 8.png">
+		<br>
+		Flake8 appears to have picked up some white space formatting errors and some ambiguous names, like a single letter being used.
+		<br>
+		I corrected the code and the code now looks like this.
+		<br>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 9.png">
+		<br>
+		I then tried running flake8 on the metricTest.py file, but the file received a syntax error straight away and the flake8 linter would not run anymore. It 
+		appears that the metric test file was copied over from somewhere, so every line was numbered, which has obviously triggered the syntax error. I fixed all 
+		the obvious errors, and then fixed all the errors flagged up by flake8. The image of the corrected code can be seen below. The amendments included:
+			<ul>
+				<li>Trailing spaces</li>
+				<li>Missing line breaks</li>
+				<li>Un-indented code</li>
+				<li>Missing spaces around operators</li>
+				<li>Too long lines</li>
+			</ul>
+		<img class="img-responsive" alt="" src="./secure software/unit4/image 10.png">
+		</p>
+		<p><b>Question 4</b>
+		<br>
+		I was unable to complete the question 4 using the mccabe, since the program would not run in Codio or other compillers.
+		</p>
+		<p><b>Question 5</b>
+		<br>
+		The Cyclomatic Complexity is commonly considered in modules on testing the validity of code design today. However, in your opinion, should it be? Does it remain 
+		relevant today? Specific to the focus of this module, is it relevant in our quest to develop secure software? Justify all opinions which support your argument and 
+		share your responses with your team.</p>
+		<p>The CC metric is still relevant as it provides an indication on the code structure, whether it will have a high maintainability, high test effort. It can be used to predict the number of test cases required for any given piece of code (Ebert & Cain, 2016).</p>
+		<p>The higher the CC metric, the more difficult it will be to read and understand the code, meaning that it could not be tested to its fullest, which could in turn lead to missed bugs in the code. Also, as the complexity of the code increases, the probability of new error introduction increases to (Jader & Mahmood, 2018).</p>
+		<p>However, as the authors of the Cyclomatic Complexity paper had pointed out, this is more often considered an academic metric, rather than something that is used in practice. Whilst the metric is relevant, not many know about it, and even less people know how to use it or how to interpret the results. On top of that, many software development specialists do not have the time to learn how to produce metrics like that, because the time spent learning needs to be spent on subjects that help you to stay relevant in the job market (Ebert & Cain, 2016).</p>
+		<p><b>References</b>
+		<br>
+		Abd Jader, M. N., & Mahmood, R. Z. (2018) CALCULATING MCCABE'S CYCLOMATIC COMPLEXITY METRIC AND ITS EFFECT ON THE QUALITY ASPECTS OF SOFTWARE.
+		<br>
+		Ebert, C. and Cain, J. (2016). Cyclomatic Complexity. IEEE Software, 33(6), pp.27–29.
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
-		<p>This week we have continued on reading more research papers, whilst focusing on the risks associated to the Software Development Lifecycle. The two papers by 
-		Hijazi et al. (2014) and Roy et al. (2015) have provided a very detailed overview of a variety of risks that fall under each software development stage. The papers have 
-		also reviewed the overal risk categories that should be used when conducting a risk assessment, to ensure no certain type of risk is underlooked.
+		<p>In this unit our reading materials contained of a paper on the Secure Feature Driven Development (SFDD) (Firdaus et al, 2014) and of chapters 3, 4 and 10 from the book 
+		by Pillai (2017).
 		<br>
-		The papers do provide a good guidance and could be used when assessing risks associated to any new software development. Ideas discussed by both authors are similar and 
-		discuss the need of addressing the risks applicable to each software development stage, rather than an overall risk, as a means of ensurring that the all types of risks 
-		are analysed. 
+		I enjoyed reading more on the SFDD. I have not used the FDD in my software development Project Management career, so it was good learning a new approach into developing 
+		software. I particularly liked their proposal including the introduction of a security master role. I think there has to be one person accountable for tracking the security 
+		features to completion, otherwise, all project security implementations are doomed to failure.
 		<br>
-		I don't see any downsides to the proposed risk analysis methodology and I can see it working well in the real-world situations, given my own Project Management experiences. 
-		However, I do think that these risk analysis methods are less known, even though they have a lot to offer, and that potentially the Information technology community 
-		should look at developing the risk analysis framework most suitable to this particular industry.</p>
-		<p>This week we have also worked on preparing for the seminar where we had to prepare an overall list of up to 5 risks individually, then create an overall 
-		team list of 5 risks, then come up with up to 5 mitigations individually (one for each risk) and then lastly build a team list of mitigations.
+		The three chapters from the Pillai book were also very useful. It has introduced me to various aspects of software testing and different Python tools and libraries available 
+		that could help with detecting coding issues. Chapter on debugging was particularly useful since I see myself being able to apply the knowledge from it, to our unit 6 assignment.
+		</p>
+		<p>We have also had to complete various Codio activities using linters pylint and flake8. I have enjoyed the tasks and I think they have provided me with a better understanding 
+		of what is considered a correct way of styling your Python code. The code which adheres to common rules is easier to read, which makes it easier to debug, which in turn makes 
+		it more secure. I will be implementing these linters in our unit 6 assignment, when testing the code we have written.
 		<br>
-		We have carried all the work in the Google documents upon the agreed deadlines.
-		<br>
-		I was very pleased with the team's involvement this time round. We have moved onto using Whatsapp for in between meeting communications and everyone appears 
-		to be keeping track of the tasks better. I still need to remind the team members of the upcoming deadlines, however, the team is more responsive and picks up 
-		the tasks a lot quicker and on a more timely manner.</p>
-		<p>We have also started working on our Unit 6 assignment and made a very good progress: I think we are about 60% of the way there, which is a very good progress, 
-		keeping in mind we still have over 2 weeks to complete the work.</p>
+		I was, however, unable to use the mccabe Python module, because it would not run on Codio and I do not have Python installed on my machine. However, I have completed a lot of 
+		theoretical research into this tool instead, so I know what results I can expect from it and I think it may also be useful in our unit 6 submission to ensure the code is 
+		not complex, thus improving the readibility, maintainability and security.
+		</p>
+		<p>We have also began our work on the Unit 6 assignment. The task assignment and how we beging where the 'stickiest' parts of this assignment. Not many of us have 
+		the development experience, and the framework we have agreed to use (Django) meant that only Kate and potentially Ali could do the development work. We all could 
+		have picked up some tasks, however, managing the codebase and its versions, could have been difficult if we all had worked on it at the same time. So, we had a 
+		team meeting and agreed that only some of us would do the development and the rest could do other tasks, such as the test document and the readme file.</p>
 		<p><b>References</b>
 		<br>
-		Hijazi, H., Alqrainy, S., Muaidi, H. & Khdour, T. (2014) Identifying Causality Relation between Software Projects Risk Factors. International Journal of Software Engineering and Its Applications 8(2): 51-58.
+		Pillai, A.B. (2017) Software Architecture with Python. Birmingham, UK. Packt Publishing Ltd.
 		<br>
-		Roy, B., Dasgupta, R. & Chaki, N. (2015) A Study on Software Risk Management Strategies and Mapping with SDLC. Advances in Intelligent Systems and Computing 1(1): 121-138. DOI: https://doi.org/10.1007/978-81-322-2653-6_9.
+		Firdaus, A., Ghani, I. and Jeong, S. R. Secure Feature Driven Development (SFDD) Model for Secure Software Development, Procedia Social and Behavioral Sciences, 2014.
 		</p>
 		</div>
 	</div>
@@ -530,11 +770,60 @@
 	<button type="button" class="collapsible"><i class="fa fa-angle-double-right" aria-hidden="true" style="padding-right:0.5rem;" style="font-size:130%;"></i><b>Unit 5</b></button>
 	<div class="content">
 	<h4><b>Unit overview</b></h4>
-	<p>The unit 5 focuses on reviewing how and why the business continuity and disaster recovery plans should be created. We have also looked into the main 
-	determining factors in BC/DR plans, i.e. the Business Impact Assessments (BIA), the Recovery Time Objective (RTO) and Recovery Point Objective (RPO). We are 
-	also discussing the emerging treds in the Information Risk management during this unit.</p>
+	<p>This unit aims to discuss the future secure design, development, programming language and OS trends, explain what is meant by the FOG computing, the IoT and Cyber 
+	Physical Systems as well as to explore systems and solutions which could be investigated as possible research topics.</p>
+
+		<button type="button" class="collapsible"><b>&#9672; Codio activity - restful API with Flask</b></button>
+		<div class="content">
+		<p><b>Question 1</b>
+		<br>
+		Run the API.py code. Take a screenshot of the terminal output. What command did you use to run the code?
+		</p>
+		<p>
+		I saved the script provide on my machine, instead of using the Jupiter Notebooks and ran it on my terminal using python3 app.py command (I renamed the file).
+		</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/image0.png">
+		<p>The command line generated the rest API and ran it.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 1.png">
+		<p>It turned out, I didn’t update enter my username, so that the url would be in format http://127.0.0.1:5000/user/Ags.</p>
+		<p>I updated the code, and opened the page again, this time I was presented with a type error.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 2.png">
+		<p>It turned out that the code on the university website was missing the user name, so I needed to update second from the bottom code line to api.add_resource(User, "/user/<string:name>") to make it work.</p>
+		<p>Then I got the following page if I tried to open the page for my own name.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 3.png">
+		<p><b>Question 2</b>
+		<br>
+		Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Ann 
+		<br>
+		What happens when this command is run, and why?
+		</p>
+		<p>I was unable to run the w3m command on my windows machine to browse the webpage on the computer, however, I was able to start the API and load it in the browser.</p>
+		<p>The browser loaded the details of the user.</p>
+		<p>This is because we fetched the user’s name and that user existed with these values in our rest API.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 4.png">
+		<p><b>Question 3</b>
+		<br>
+		Run the following command at the terminal prompt: w3m http://127.0.0.1:5000/user/Adam 
+		<br>
+		What happens when this command is run, and why?
+		</p>
+		<p>When trying to fetch Adam, I get no results because Adam is not configured as one of the users in our rest API.</p>
+		<img class="img-responsive" alt="" src="./secure software/unit 5/Image 5.png">
+		<p><b>Question 4</b>
+		<br>
+		What capability is achieved by the flask library?
+		</p>
+		<p>Flask provides simplicity and scalability, it is known for being more lightweight when compared to Django. All the code is kept within the ‘core’, hence, it’s also known as a microframework (Janetakis, 2018). It has an extensive documentation.</p>
+		<p>All this allows a simple implementation of an API, which allows the information to be accessible and manipulated via an internet (Smyth, 2018).</p>
+		<p><b>References</b>
+		<br>
+		Janetakis, N. (2018) Flask Libraries for Building Awesome Real World RESTful APIs. [online] Nick Janetakis. Available at: https://nickjanetakis.com/blog/flask-libraries-for-building-awesome-real-world-restful-apis [Accessed 7 Jul. 2022].
+		<br>
+		Smyth, P. (2018). Creating Web APIs with Python and Flask. The Programming Historian, (7).
+		</p>
+		</div>
 		
-		<button type="button" class="collapsible"><b>&#9672; Wiki activity</b></button>
+		<button type="button" class="collapsible"><b>&#9672; Module activity - future trends</b></button>
 		<div class="content">
 		<p>The microservices architecture model had a great many benefits to it: it broke down the software into smaller easier to manage and maintain components, 
 		allowed quicker development and deployment due to low component coupling (Salah et al, 2016).</p>
@@ -570,11 +859,6 @@
 		</p>
 		</div>
 		
-		<button type="button" class="collapsible"><b>&#9672; Discussion continued - peer responses</b></button>
-		<div class="content">
-		<p>TBC</p>
-		</div>
-		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
 		<p>This weeks reading material consisted of some papers on Fog computing (Bonomi et al, 2012; Choi et al, 2017), the estimation of software testing 
@@ -587,9 +871,6 @@
 		it enables fast software development due to low software component coupling. For our unit 6 project, we are using Django framework for development and Django 
 		could be considered a framework which provides microservices development methodology. I.e. separate Django apps can be created for the same web application 
 		project, where each app is responsible for a specific functionality, thus creating a microservices like architecture.</p>
-		<p>This week we also had to write our own entry on the future architecture trends and I chose to follow on Microservices, with the most recent spinoff called 
-		the multi-runtime microservices architecture. It was interesting researching this, since, I don't work much with the architecture side of the software in my 
-		day to day job and instead I focus on the front end development work. </p>
 		<p><b>References</b>
 		<br>
 		Choi, N., Kim, D., Lee, S. & Yi, Y. (2017) A Fog Operating System for User-Oriented IoT Services: Challenges and Research Directions. IEEE Communications Magazine 55(8): 44-51.
@@ -616,9 +897,7 @@
   </div>
   
 </div>
-
 </main>
-
 <script>
 	document.addEventListener("DOMContentLoaded", function (event) {
 	  navbarToggleSidebar();
@@ -629,7 +908,6 @@
 <script>
 	var coll = document.getElementsByClassName("collapsible");
 	var i;
-
 	for (i = 0; i < coll.length; i++) {
 	  coll[i].addEventListener("click", function() {
 		this.classList.toggle("active");
@@ -642,6 +920,5 @@
 	  });
 	}
 </script>
-
 </body>
 </html>
