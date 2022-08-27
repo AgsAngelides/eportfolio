@@ -425,6 +425,39 @@
 		</p>
 		</div>
 		
+		<button type="button" class="collapsible"><b>&#9672; Initial discussion forum post - breaking down the monoliths</b></button>
+		<div class="content">
+		<p>With the podcasts becoming more popular, Software as a Service (SaaS) podcast applications have seen a large increase in their user base (Bate, 2020) over the last 
+		few years. Since many smaller companies tend to use a monolithic architecture (Kwiecen, 2022), it is safe to assume that many of the podcast SaaS applications started 
+		off as monoliths too. This leads us to speculate that due to the growing user base, it could become increasingly harder to manage such applications and a different 
+		approach is required.</p>
+		<p>Monolithic SaaS applications, such as those used for podcasts, are usually composed of a webserver, a load balancer, a catalogue of podcasts, a payment system (for 
+		subscription) and a database (talend, 2022).</p>
+		<p>Breaking down a monolith requires experienced architects and developers and can be costly; microservices can also be bad for the business if implemented incorrectly, 
+		for example, if microservice boundaries are worked out wrong (Newman, 2019). It can also be complex to operate and troubleshoot (Newman, 2019).</p>
+		<p>However, at the same time it can improve the team’s autonomy, reduce the time taken to deploy the new features, provide cost effective scaling, lessen the impact of 
+		outages, etc (Newman, 2019).</p>
+		<p>The breakdown of the monolith could begin with building the underlaying architecture, continuous delivery pipelines and APIs (Fowler, 2018), for example, it could 
+		include building the user authentication service first: the edge service which is loosely coupled. This could be followed by other items, such as the podcast 
+		subscriptions, podcast notifications, payments, etc.</p>
+		<p>Next, the data in the monolith database should be decomposed to work with the new microservices (Behara, 2018), i.e. it should follow a domain driven design. For example,
+		we may want to store the podcast payment information in the database separate from the one which stores the podcast author information.</p>
+		<p>The end product could contain of multiple microservices for managing the payments, users, podcast authors, podcast posting, podcast subscription, podcast downloads for 
+		offline listening, etc. </p>
+		<p><b>References</b>
+		<br>
+		Bate, J. (2020) The growing popularity of podcasts. Available from: https://pplprs.co.uk/benefits-music/popularity-of-podcasts/#:~:text=A%20recent%20surge%20in%20their,and%2030%20million%20episodes%20available [Accessed 27 August 2022].
+		<br>
+		Behara, S. (2018) Breaking the Monolithic Database in Your Microservices Architecture. Available at: https://dzone.com/articles/breaking-the-monolithic-database-in-your-microserv [Accessed 27 August 2018].
+		<br>
+		Kwiecen, A. (2022) 10 companies that implemented the microservice architecture and paved the way for others. Available from: https://www.divante.com/blog/10-companies-that-implemented-the-microservice-architecture-and-paved-the-way-for-others [Accessed 27 August 2022].
+		<br>
+		Newman, S. (2019) Monolith to microservices : evolutionary patterns to transform your monolith. Sebastopol, Ca: O’reilly Media, Inc.
+		<br>
+		Talend (2022) Monolithic vs. Microservices: a guide to application architecture. Available from: https://www.talend.com/resources/monolithic-architecture/ [Accessed 27 August].
+		</p>
+		</div>
+		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
 		<p>TBC</p>
