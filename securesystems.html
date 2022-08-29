@@ -458,6 +458,31 @@
 		</p>
 		</div>
 		
+		<button type="button" class="collapsible"><b>&#9672; Team meeting 28th of August 2022</b></button>
+		<div class="content">
+		<p>We had a team meeting to discuss how we will do the unit 6 assignment and we have agreed on the following:
+			<ul>
+				<li>Ali to send the code he has done so far on the sockets and we will see if we can implement it.</li>
+				<li>We are all to research and understand as well as we can:
+					<ul>
+						<li>Python sockets</li>
+						<li>Python producer consumer</li>
+						<li>Docker</li>
+						<li>Kafka and how producer consumer works</li>
+					</ul>
+				</li>
+				<li>Look for examples of either:
+					<ul>
+						<li>straight forward python code which uses two containers, producer consumer, sockets and a secure protocol.</li>
+						<li>kafka implementation which uses two containers and a secure protocol.</li>
+					</ul>
+				</li>
+				<li>We will research protocols which we could implement in Python with examples preferably that fit in our design.</li>
+				<li>On Tuesday we will decide whether we are going to be using Kafka or straight forward python and no kafa.</li>
+			</ul>
+		</p>
+		</div>
+		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
 		<div class="content">
 		<p>In this unit we have been asked to complete a Wiki activity on suitable network protocols for the smart home systems and to produce an initial post for the discussion 
@@ -470,9 +495,34 @@
 		should consider protocols for each level, or pick a suitable protocol stack and discuss it. I ended up discussing 6LoWPAN protocol and how it could be integrated with other 
 		network and application level protocols for added security. That said, I am still struggling to fully understand how all these different layer protocols work together and 
 		I feel like the lecturecast material should have included some of this information to ensure we know our basics.</p>
+		<p>This week's reading included a couple of papers (White et al, 2017; Campbell et al, 1994) on the Quality of Service (QoS), a paper on the 5G QoS (Daengsi & Wuttidittachotti, 2020),
+		another paper on the attack trees, how to prune them and prepare the countermeasures (Kordy, 2013) and some online pages on the producer/consumer design pattern in Python 
+		(Shene, 2014; Tech Monger, 2018).</p>
+		<p>Articles on the producer/consumer were very useful since we have to use this design patter for our unit 6 assignment. I also enjoyed reading about the 5G QoS in India and 
+		I agree that an assessment is needed to ensure that the implemention of the new generation network is actually worth while.</p>
+		<p>The papers on the QoS and IoT where also interesting. As the authors highlight, the IoT exploded and there are many devices connected together, however, the rollout of 
+		the new devices appears to have focused on the devices and the new inventions rather than the quality of service. Especially for the critical IoT devices such as the security 
+		cameras, pet cameras, smart locks, smart doorbells, the service has to be always available, the latency has to be low, there must not be any loss of the data packets, and it 
+		appears almost as if the devices are rolled out first and then any QoS issues are addressed afterwards if the customers complain - it should be the other way around!</p>
+		<p>On Sunday we also held a team meeting in which every team member participated. We struggled to decide how we will approach the coding part. I initially suggested using Python 
+		library Kafka, but no one knew about it, so we could not make a decission there and then. Also, some of us are not as good with the coding activities as others, and so 
+		we try to split the tasks in such way that those not comfortable with coding can do readme files, testing documents, etc. But again, we could not quite agree. So we decided to 
+		do a lot of research and discuss this again on Tuesday when we will make a decission on the approach we will take.</p>
 		<p><b>References</b>
 		<br>
 		Fowler, M. (2018) How to break a Monolith into Microservices. Available from: https://martinfowler.com/articles/break-monolith-into-microservices.html [Accessed 27 August 2022].
+		<br>
+		Daengsi, T. & Wuttidittachotti, P. (2020) Quality of Service as a Baseline for 5G: A Recent Study of 4G Network Performance in Thailand. IEEE International Conference on Communication, Networks and Satellite: 395-399. 
+		<br>
+		Campbell, A., Coulson, G. & Hutchison, D. (1994) A Quality of Service Architecture. ACM SIGCOMM Computer Communication Review.
+		<br>
+		White, G., Nallur, V. & Clarke, S. (2017) Quality of Service Approaches in IoT: A Systematic Mapping. Journal of Systems and Software 132: 186-203.
+		<br>
+		Kordy, B., Kordy, P., Mauw, S., Schweitzer, P. (2013) ADTool: Security Analysis with Attack–Defense Trees. In: Joshi K., Siegle M., Stoelinga M., D’Argenio P.R. (eds) Quantitative Evaluation of Systems. QEST 2013. Lecture Notes in Computer Science. 8054. Springer, Berlin Heidelberg.
+		<br>
+		Shene, C. (2014) ThreadMentor: The Producer/Consumer (or Bounded-Buffer) Problem. Michigan Tech.
+		<br>
+		Tech Monger (2018) Solution to Producer Consumer Problem in Python. Tech Monger.
 		</p>
 		</div>
 	</div>
