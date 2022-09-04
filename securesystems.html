@@ -551,7 +551,23 @@
 		
 		<button type="button" class="collapsible"><b>&#9672; Codio Activity: The Producer-Consumer MechanismPage</b></button>
 		<div class="content">
-		<p>TBC</p>
+		<p>We have been asked to run the code below.</p>
+		<img class="img-responsive" alt="" src="./secure systems/unit 5/code.png">
+		<p>Then to answer some questions.</p>
+		<p><b>What is the purpose of q.put(I)?</b>
+		<br>
+		The functions q.put(i) puts an item into the queue.</p>
+		<p><b>What is achieved by q.get()?</b>
+		<br>
+		The function q.get() removes and returns an item from the queue.</p>
+		<p><b>What functionality is provided by q.join()?</b>
+		<br>
+		The function q.join() places a block until all items in the queue have been gotten and received. When the count of unfinished tasks goes back to zero, the q.join() tasks unblocks the queue again.
+		</p>
+		<p><b>Extend this producer-consumer code to make the producer-consumer scenario available in a secure way. What technique(s) would be appropriate to apply?</b>
+		<br>
+		You could configure certificates for ensuring that the messages are transmitted securely, such as SSL. You could add some authorization, so that only authorized producers and consumers can connect to the queue and deposit messages to it/consume messages from it.
+		</p>
 		</div>
 		
 		<button type="button" class="collapsible"><b>&#9672; Unit reflections</b></button>
